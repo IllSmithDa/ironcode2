@@ -1,0 +1,44 @@
+@import '../../sass/variables';
+
+.topics-container {
+  width: 200px;
+  min-height: max-content;
+  position: sticky;
+  background-color: #EFEFEF;
+
+  h4 {
+    margin: 1rem;
+  }
+  a {
+    display: block;
+    border: none;
+    text-decoration: none;
+    width: 200px;
+    padding: 1rem;
+    cursor: pointer;
+    box-sizing: border-box;
+    font-size: 1.8rem;
+    text-align: left;
+    &:hover {
+      background-color: $color-cloud;
+    }
+    &::after,
+    &::before,
+    &:active,
+    &:visited {
+      color: #000;
+    }
+  }
+}
+
+@media (max-width:1023px) {
+  .topics-container {
+    display: none;
+  }
+}
+.active-tab {
+  background-color: $dark-cloud;
+  &.dark {
+    background-color: #444;
+  }
+}

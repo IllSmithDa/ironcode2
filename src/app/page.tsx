@@ -1,95 +1,44 @@
-import Image from 'next/image'
-import styles from './page.module.css'
+'use client';
+import React, {useEffect, useState} from 'react'
+import './Home.scss'
+import { ActiveLanguages, ConceptItem, ConceptTopic, Language } from '@/types';
+import { axiosFetch } from '@/axios';
+import TopicsTab from '@/components/TopicsTab/TopicsTab';
+import { useDispatch } from 'react-redux';
+import { setTopicSelection } from '@/Redux/Features/TopicsSlice';
+import Image from 'next/image';
+import { useTheme } from '@/themes/ThemeContext';
+import Footer from '@/components/Footer/Footer';
+import mainImg from '@/assets/iron_title.svg';
 
 export default function Home() {
+  const [darkMode, setDarkMode] = useState<boolean>();
+  const dispatch = useDispatch();
+  const {isDark} = useTheme();
+
+  useEffect(() => {
+    if (isDark !== null) {
+      setDarkMode(isDark);
+    }
+  }, [isDark])
+
+  useEffect(() => {
+    dispatch(setTopicSelection(''));
+  }, [dispatch])
+
+
   return (
-    <main className={styles.main}>
-      <div className={styles.description}>
-        <p>
-          Get started by editing&nbsp;
-          <code className={styles.code}>src/app/page.tsx</code>
-        </p>
-        <div>
-          <a
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{' '}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className={styles.vercelLogo}
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
-        </div>
-      </div>
-
-      <div className={styles.center}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
-
-      <div className={styles.grid}>
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Docs <span>-&gt;</span>
-          </h2>
-          <p>Find in-depth information about Next.js features and API.</p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Learn <span>-&gt;</span>
-          </h2>
-          <p>Learn about Next.js in an interactive course with&nbsp;quizzes!</p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Templates <span>-&gt;</span>
-          </h2>
-          <p>Explore the Next.js 13 playground.</p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Deploy <span>-&gt;</span>
-          </h2>
-          <p>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
-    </main>
+    <section className='homepage-container'>
+      <TopicsTab languageId='' defaultMode={true} />
+      <section className={`landing ${darkMode ? 'dark': ''}`}>
+        <section className={`code-container code-page-colors ${darkMode ? 'dark': ''}`}>
+          <Image src={mainImg} alt='main title image' />
+          <h1>Iron Code Man</h1>
+          <h2>A Reference for Programmers</h2>
+          <h4>Select topic or language</h4>
+        </section>
+        <Footer />
+      </section>
+    </section>
   )
 }

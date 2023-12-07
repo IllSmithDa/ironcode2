@@ -1,0 +1,6 @@
+@import '../../sass/classes';
+@import '../../sass/mixins';
+.modal-container {
+  @include fixedCenter;
+  z-index: 5;
+}

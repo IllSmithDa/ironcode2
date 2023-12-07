@@ -1,0 +1,263 @@
+@import './variables';
+@import './mixins';
+.code-page {
+  display: flex;
+  box-sizing: border-box;
+  width: 100%;
+  .dark {
+    background-color: #1A1A1A;
+  }
+}
+.code-container {
+  width: 100%;
+  padding: 1rem 2rem;
+  box-sizing: border-box;
+  min-height: 100vh;
+  margin:auto;
+  h4 {
+    margin-top: 2rem;
+  }
+}
+
+.std-button {
+  width: 12rem;
+  height: 3.2rem;
+  margin-top: 1rem;
+  background-color: #DEDEDE;
+  border: none;
+  padding: 1rem;
+  border-radius: 2.5rem; 
+  box-shadow: $light-shadow;
+  outline-color: $color-white;
+  cursor: pointer;
+  &-medium {
+    width: 175px;
+  }
+  &-long {
+    width: 100%;
+  }
+
+  &-right {
+    align-self: flex-end;
+  }
+  &:hover {
+    background-color: $color-white;
+    transform: translateY(-1px);
+    box-shadow: $default-shadow;
+  }
+  &:active {
+    transform: translateY(1px);
+    box-shadow: $default-shadow;
+  }
+  &-black {
+    background-color: $color-black;
+    color: $color-white;
+    &:hover {
+      background-color: $dark-night;
+    }
+  }
+  &-white {
+    width: 120px;
+    background-color: $color-air;
+    border: none;
+    padding: 1rem 1.2rem;
+    cursor: pointer;    
+    outline-color: $dark-night;
+    &:hover {
+      background-color: $color-white;
+    }
+  }
+  &-dark-grey {
+    background-color: $dark-grey !important;
+    color: $color-white !important;
+    &:hover,
+    &:active {
+      background-color: $medium-grey  !important;
+      color: $color-white  !important;
+    }
+  }
+  &-night {
+    background-color: $dark-night !important;
+    color: $color-white !important;
+    &:hover {
+      background-color: $dark-grey !important;
+      color: $color-white !important;
+    }
+  }   
+  &-blue {
+    color: $baby-blue;
+  }
+  &-med {
+    width:150px;
+  }
+  &-brand {
+    margin-top: 1rem;
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    align-self: center;
+  }
+}
+
+.flex-right {
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+}
+
+.drop-down-container {
+  position: absolute;
+  z-index: 3;
+  background-color: $color-cloud;
+  li {
+    list-style: none;
+    &:hover {
+      background-color: $dark-cloud;
+    }
+    button {
+      background-color: $light-grey;
+      border: 2px solid $light-grey;
+      font-size: 1.8rem;
+      padding: 1rem 1.2rem;
+      width: 100%;
+      cursor: pointer;
+      box-sizing: border-box;
+      &:hover {
+        // color: $color-air;
+        background-color: $dark-cloud;
+        border: 2px solid $dark-cloud;
+        text-decoration: 1px solid underline;
+      }
+    }
+  }
+}
+
+.silent-modal {
+  position: fixed; /* Stay in place */
+  z-index: 2; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  justify-content: center;
+  flex-direction: column;
+  &-dark {
+    background-color: rgb(0,0,0); /* Black w/ opacity */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  }
+}
+.error-txt {
+  color: $error-red;
+}
+.success-txt {
+  color: $success-green;
+}
+
+.color-cloud {
+  background-color: $color-cloud;
+  &.dark {
+    background-color: #111;
+    h1, h2, svg  {
+      color: #FFF;
+    }
+    button {
+      background-color: #222;
+      border: 2px solid #222;
+      color: #FFF;
+    }
+    .navbar-dropdown {
+      li, ul, a, section {
+        background-color: #222;
+        border: 2px solid #222;
+        color: #FFF;
+      }
+      a:hover {
+        background-color: #444;
+      }
+    }
+  }
+  h1, h2, svg, button {
+    color: #111;
+  }
+}
+
+.near-white {
+  background-color: $near-white;
+  &.dark {
+    background-color: #222;
+    a, h4 {
+      color: #FFF;
+      &::after,
+      &::before,
+      &:active,
+      &:visited {
+        color: #FFF;
+      }
+    }
+    a{
+      &:hover {
+        background-color: #555;
+      }
+    }
+  }
+}
+
+.code-page-colors {
+  background-color: #FFF;
+  &.dark {
+    background-color: #1A1A1A;
+    color: #FFF;
+    pre, h1, h2, h3, h4 {
+      color: #FFF;
+    }
+    .card,
+    .select-container {
+      background-color: #222;
+    }
+  }
+}
+.inv-btn {
+  background-color: inherit;
+  cursor: pointer;
+  color: inherit;
+  border: none;
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+.item-container {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  margin: 2rem 0;
+  gap: 2rem;
+  background-color: inherit;
+}
+
+.card {
+  @include defaultCard;
+  height: fit-content;
+  width: max-content;
+  padding: 1rem 2rem;
+  // margin-right: 2rem;
+  // margin-bottom: 2rem ;
+  pre {
+    margin: 1rem 0;
+  }
+  animation-duration: 2s;
+  animation-name: fadeInLeft;
+}
+
+@keyframes fadeInLeft {
+  from {
+    margin-left: 1rem;
+    opacity: 0;
+  }
+
+  to {
+    margin-left: 0%;
+    opacity: 1;
+  }
+}

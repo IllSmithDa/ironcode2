@@ -1,0 +1,52 @@
+.language-select-container {
+  width: 500px;
+  animation-duration: 2s;
+  animation-name: fadeInRight;
+  ul {
+    width: 500px;
+    background-color: #EFEFEF;
+    padding: 1px 1rem 1rem 1rem;
+    box-sizing: border-box;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr ;
+    li {
+      padding: 5px 1rem;
+      label,
+      input {
+        cursor: pointer;
+      }
+    }
+    &.dark {
+      background-color: #222;
+    }
+  }
+  h4 {
+    margin: 1rem 0;
+  }
+}
+
+@media (max-width: 1023px) {
+  .sidebar-container {
+    display: none;
+    width: 100%;
+  }
+  .select-container {
+    width: 95%;
+    ul {
+      grid-template-columns: 1fr 1fr 1fr;
+    }
+  }
+  
+}
+
+@keyframes fadeInRight {
+  from {
+    margin-left: 1rem;
+    opacity: 0;
+  }
+
+  to {
+    margin-left: 0%;
+    opacity: 1;
+  }
+}

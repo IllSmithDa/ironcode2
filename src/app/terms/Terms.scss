@@ -1,0 +1,27 @@
+@import '../../sass/variables';
+@import '../../sass/mixins';
+.terms-container {
+  width: 800px;
+  margin: 5rem auto;
+  margin-top: 4rem;
+  padding: 3rem;
+  box-sizing: border-box;
+  background-color: $color-air;
+  h2 {
+    margin-bottom: 3rem;
+  }
+  h3 {
+    margin: 3rem 0;
+  }
+  p {
+    line-height: 3.3rem;
+    font-size: 1.7rem;
+    letter-spacing: 1px;
+    margin: 2rem 0;
+    text-indent: 3rem;
+  }
+  img {
+    width: 100%;
+    height: fit-content;
+  }
+}

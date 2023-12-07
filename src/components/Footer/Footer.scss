@@ -1,0 +1,27 @@
+@import '../../sass/classes';
+@import '../../sass/mixins';
+.footer-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  padding: 4rem 0;
+  background-color: #FFF;
+  color: #000;
+  &.dark {
+    background-color: #1A1A1A;
+    li {
+      a {
+        color: #FFF;
+      }
+    }
+  }
+  li {
+    a {
+      font-size: 1.3rem;
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+}

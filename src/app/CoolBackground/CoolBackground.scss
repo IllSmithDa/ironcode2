@@ -1,0 +1,13 @@
+@import '../../sass/mixins';
+.triangle-element {
+  @include absCenter;
+  width: 40vw;
+  height: 40vw;
+  background: conic-gradient(at 50% 50%,transparent 148deg,#EDEDED 0,#DEDEDE 212deg, transparent 0);
+  z-index: -1;
+}
+
+
+.background-container {
+  @include flexCenter;
+};

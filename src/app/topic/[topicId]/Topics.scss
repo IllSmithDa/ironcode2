@@ -1,0 +1,15 @@
+@import '../../../sass/mixins';
+@import '../../../sass/classes';
+
+
+
+.topic-desc-cont {
+  margin: 4rem 0;
+  p {
+    margin-top: 1rem;
+  }
+}
+
+.code {
+  white-space: pre;
+}

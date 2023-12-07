@@ -34,3 +34,9 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+
+
+
+ # Purpose of this App
+
+ It is to be a reference for programmers. It's not a in depth tutorial on every programming language but instead is a resource on the specific syntax of everyday programming languages that helps users remember or familiarize similar concepts from different programming languages. Most programming languages have similar concepts such as variables, printing text, object oriented programming (classes) but the details are often slightly different such as lack of brackets, use of indentations, or simply capitzliaing S in String when declaring a vraiable to be a string type. 

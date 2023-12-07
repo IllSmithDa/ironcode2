@@ -1,0 +1,120 @@
+@import '../sass/variables';
+@import '../sass/themes';
+
+@font-face {
+  font-family: 'Roboto Normal';
+  src: url('../../public/fonts/Roboto/Roboto-Regular.ttf');
+  font-weight: 400;
+  font-style: normal;
+}
+// main {
+//   max-width: 1100px;
+//   margin-right: auto;
+//   margin-left: auto
+// }
+:root {
+  font-size: 62.5%;
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  min-height: 100vh;
+  width: 100%;
+}
+body {
+  color: #000;
+  background-color: #FFF;
+  padding: 0;
+  margin: 0;
+  &.dark {
+    color: #FFF;
+    background-color: #1A1A1A;
+  }
+  width: 100%;
+}
+main {
+  width: 100%;
+}
+html { 
+  color: #000;
+  background-color: #FFF;
+  &.dark {
+    color: #FFF;
+    background-color: #1A1A1A;
+  }
+  width: 100%;
+}
+.global-backgrounds {
+  background-color: #F1F1F1;
+  &.dark {
+    background-color: #1A1A1A;
+  }
+}
+pre, div, section, ul, li, h1, h2, h3, h4, p, a, font {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  text-decoration: none;
+  font-family: "Roboto Normal";
+  letter-spacing: 1px;
+}
+p {
+  line-height: 2.3rem;
+  letter-spacing: 1px;
+  word-spacing: 1px;
+}
+pre {
+  line-height: 2.3rem;
+  letter-spacing: 1px;
+  word-spacing: 3px;
+}
+a::before,
+a::after,
+a:visited,
+a {
+  color: #000;
+}
+p, label, pre  {
+  font-size: 1.5rem;
+}
+
+h1 {
+  font-size: 4rem;
+}
+
+h2 {
+  font-size: 3rem;
+}
+
+h3 {
+  font-size: 2rem;
+}
+
+h4 {
+  font-size: 1.7rem;
+}
+
+input, textarea {
+  outline-color: $border-blue;
+  box-sizing: border-box;
+  padding: 1rem;
+}
+// @media (max-width: 1300px) {
+//   main {
+//     max-width: 90%;
+//   }
+// }
+.color-text {
+  color: black;
+  &.dark {
+    color: White;
+  }
+}
+
+.main-body-content {
+  &.dark {
+    background-color: #1A1A1A;
+  }
+}
+.dark {
+  background-color: #1A1A1A;
+}

@@ -1,0 +1,169 @@
+@import '../../sass/mixins';
+@import '../../sass/classes';
+.navbar-container {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0 1rem;
+  li,
+  li::after,
+  li:visited,
+  li::before {
+    text-decoration-line: none;
+    text-decoration: none;
+    text-decoration-style: none;
+  }
+  ul {
+    display: flex;
+    gap: 1rem;
+  }
+}
+.navbar-align {
+  display: flex;
+  justify-content: space-between;
+  width: 1300px;
+  margin: auto;
+}
+.home-icon {
+  font-size: 28px;
+  padding: 6px
+}
+.menu-tabs {
+  background-color: $dark-cloud;
+  border: 2px solid $dark-cloud;
+  font-size: 1.8rem;
+  padding: 1rem 1.2rem;
+  cursor: pointer;
+  box-sizing: border-box;
+  &:hover {
+    // color: $color-air;
+    background-color: $color-cloud;
+    border: 2px solid $color-cloud;
+    // text-decoration: 1px solid underline;
+  }
+}
+
+.navbar-dropdown {
+  position: relative;
+  button {
+    width: 150px;
+    background-color: $light-grey;
+    border: 1px solid $light-grey;
+    &:hover,
+    &:active {
+      background-color: $dark-cloud;
+    }
+    border: none;
+  }
+  section {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 47px;
+    width: 150px;
+    gap: 0;
+    z-index: 3;
+    a {
+      display: block;
+      width: 150px;
+      background-color: $color-cloud;
+      border: 2px solid $color-cloud;
+      font-size: 1.8rem;
+      padding: 1rem 3rem;
+      cursor: pointer;
+      box-sizing: border-box;
+      &:hover {
+        // color: $color-air;
+        background-color: $dark-cloud;
+        border: 2px solid $dark-cloud;
+        text-decoration: 1px solid underline;
+      }
+    }
+  }  
+  &.dark {
+    a {
+      background-color: #1A1A1A;
+      &:hover {
+        background-color: #444;
+      }
+      color: #FFF;
+    }
+  }
+}
+.list-left {
+  display: none;
+  section {
+    left: -1rem;
+  }
+}
+.list-right {
+  @include flexCenter;
+}
+
+.app-icons, 
+.app-mobile {
+  height: 47px;
+  @include flexCenter;
+  img {
+    height: 42px;
+    width: 42px;
+  }
+  svg {
+    cursor: pointer;
+    font-size: 24px;
+  }
+}
+
+.app-mobile {
+  display: none;
+}
+
+@media (max-width: 1023px) {
+  .desktop-items {
+    display: none;
+  }
+  .app-mobile {
+    display: flex;
+  }
+}
+
+.profile-nav {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 47px;
+  right: 0;
+  width: 150px;
+  gap: 0;
+  z-index: 3;
+  button {
+    display: block;
+    width: 150px;
+    background-color: $color-cloud;
+    border: 2px solid $color-cloud;
+    font-size: 1.8rem;
+    padding: 1rem 3rem;
+    cursor: pointer;
+    box-sizing: border-box;
+    &:hover {
+      // color: $color-air;
+      background-color: $dark-cloud;
+      border: 2px solid $dark-cloud;
+      text-decoration: 1px solid underline;
+    }
+  }
+  &.dark {
+    button {
+      background-color: #1A1A1A;
+      &:hover {
+        background-color: #444;
+      }
+      color: #FFF;
+    }
+  }
+}
+
+@media (max-width: 1400px) {
+  .navbar-align {
+    width: 100%;
+  }
+}

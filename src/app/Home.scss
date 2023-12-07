@@ -1,0 +1,72 @@
+@import '../sass/mixins';
+@import '../sass/classes';
+
+.homepage-container {
+  display: flex;
+  width: 1300px;
+}
+
+.main-body {
+  width: 1300px;
+  margin: auto;
+  display: flex;
+}
+.item-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  margin-top: 2rem;
+  color: #000;
+}
+
+.card {
+  @include defaultCard;
+  height: fit-content;
+  width: max-content;
+  padding: 1rem 2rem;
+  &.dark {
+    color: #FFF;
+    background-color: #555;
+  }
+}
+
+.code-container {
+  h4 {
+    margin-top: 2rem;
+  }
+  p {
+    margin: 2rem 0;
+  }
+}
+
+.landing {
+  width: 100%;
+  section {
+    @include flexCenter;
+    H1 {
+      margin-top: 1rem;
+      font-weight: 800;
+      font-size: 8rem;
+    }
+  }
+  img {
+    width: 40%;
+    height: 40%;
+    max-width: 700px;
+    max-height: 700px;
+  }
+  &.dark {
+    color: #FFF;
+    background-color: #1A1A1A;
+  }
+}
+
+@media (max-width: 1400px) {
+  .main-body {
+    width: 100%;
+  }
+  .homepage-container {
+    width: 100% ;
+    box-sizing: border-box;
+  }
+}
