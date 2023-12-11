@@ -4,24 +4,11 @@ import { useRouter } from 'next/navigation';
 import { Formik, Form, Field } from 'formik';
 import "./Login.scss";
 import * as Yup from 'yup';
-import Link from 'next/link';
 import { axiosFetch } from '../../axios';
-import { useDispatch } from 'react-redux';
 
-export default function Login({setLoader}:{ setLoader:(state: string) => void}) {
+export default function Login() {
   const [requestErr, setRequestErr] = useState<string>();
   const { push } = useRouter();
-  const dispatch = useDispatch();
-  const [isLoading, setIsLoading] = useState(false);
-  const closeModal = () => {
-    const close  = document.getElementById('modal');
-    if (close) close.style.display = 'none';
-  }
-  
-  // const registerMenu = () => {
-  //   setLoader('loading');
-  //   setTimeout(() => setLoader('register'), 500);
-  // }
 
   const renderForm = ({ 
     values,
