@@ -1,0 +1,6 @@
+@import '../../sass/mixins';
+.compare-page{
+  @include flexCenter;
+  width: 100%;
+  min-height: 85vh;
+}
