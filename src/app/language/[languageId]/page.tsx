@@ -10,7 +10,7 @@ import { setLanguage } from '@/Redux/Features/LanguageSlice';
 import SlidingBackground from '@/components/SlidingBackground/SlidingBackground';
 import { useTheme } from '@/themes/ThemeContext';
 import { parseConcepts } from '@/app/helper/parseData';
-export default function LanguageData() {
+export default function Language() {
   const [isLoading, setIsLoading] = useState(true);
   const [concepts, setConcepts] = useState<ConceptItem []>([]);
   const [darkMode, setDarkMode] = useState<boolean>();
@@ -38,7 +38,7 @@ export default function LanguageData() {
       setIsLoading(true);
       try {
         const languageRes:Language = (await axiosFetch.get(languageLink)).data.data;
-        console.log(languageRes)
+        // console.log(languageRes)
         dispatch(setLanguage(languageRes));
         setLanguageData(languageRes);
         const res = await axiosFetch.post(link, { language: languageRes.name})

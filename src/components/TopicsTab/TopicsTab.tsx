@@ -33,7 +33,7 @@ export default function TopicsTab({
       dispatch(setConcepts(topics as ConceptTopic[]));
     }
     if (selectedTopic) {
-      console.log(selectedTopic);
+      // console.log(selectedTopic);
       setTopicId(selectedTopic);
     }
     if (languageId) {
@@ -53,12 +53,14 @@ export default function TopicsTab({
       {
         topic.id === topicId ?
         <Link
+          key={`topic_${topic.id}`}
           href={`/topic/${topic.id}`}
           className={`active-tab ${darkMode ? 'dark': ''}`}
         >
           {topic.name}
         </Link>:
         <Link
+          key={`topic_${topic.id}`}
           href={`/topic/${topic.id}`}
         >
           {topic.name}
