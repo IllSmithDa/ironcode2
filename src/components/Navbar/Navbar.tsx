@@ -128,6 +128,7 @@ export default function Navbar({
                 icon={faSun}
                 tabIndex={0}
                 aria-label='light mode icon'
+                style={{ color: '#EAC117'}}
                 onClick={() => toggleTheme()}
               />
             }
