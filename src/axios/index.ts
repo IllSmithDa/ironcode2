@@ -5,9 +5,9 @@ let BASE_URL: string;
 if (typeof window !== "undefined") {
   // Client-side-only code
   BASE_URL = window?.location?.hostname === 'localhost' ? 'http://localhost:5000' : 'https://server.ironcodeman.com';
-} else [
+} else {
   BASE_URL = 'https://server.ironcodeman.com';
-]
+}
 
 //https://www.youtube.com/watch?v=w9eOvKdk5wM
 export const axiosFetch = axios.create({
