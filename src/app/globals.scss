@@ -59,12 +59,12 @@ pre, div, section, ul, li, h1, h2, h3, h4, p, a, font {
 }
 p {
   line-height: 2.3rem;
-  letter-spacing: 2px;
+  letter-spacing: 1px;
   word-spacing: 1px;
 }
 pre {
   line-height: 2.3rem;
-  letter-spacing: 2px;
+  letter-spacing: 1px;
   word-spacing: 3px;
 }
 a::before,
@@ -94,7 +94,7 @@ h3 {
 
 h4 {
   font-size: 1.7rem;
-  letter-spacing: 2px;
+  letter-spacing: 1px;
 }
 
 input, textarea {
