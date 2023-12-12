@@ -28,7 +28,6 @@ export default function About() {
         The Top right dropdown will allow users to select a programmining language and select it to see all the different concepts on one page for that particular programming langauge. This view is good if you want to focus on just one particular language while the concept view allows you to compare syntax between various programming languages 
       </p>
     </section>
-    <Footer />
     </>
   )
 }
