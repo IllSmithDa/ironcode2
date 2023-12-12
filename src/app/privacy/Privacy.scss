@@ -8,18 +8,24 @@
   padding: 3rem;
   box-sizing: border-box;
   background-color: $color-air;
+  color: #000;
+  &.dark{
+    background-color: #2A2A2A;
+    color:#FFF;
+  }
   h2 {
     margin-bottom: 3rem;
   }
   h3 {
     margin: 3rem 0;
   }
-  p {
+  p, a {
     line-height: 3.3rem;
-    font-size: 1.7rem;
+    font-size: 1.6rem;
     letter-spacing: 1px;
     margin: 2rem 0;
     text-indent: 3rem;
+    color: inherit;
   }
   img {
     width: 100%;
@@ -28,11 +34,11 @@
   h4 {
     text-indent: 1rem;
   }
-  ul {
-    li {
-      p {
-        text-indent: 2rem;
-      }
-    }
+  p {
+    text-indent: 2rem;
   }
+  a {
+    text-decoration: underline;
+  }
+
 }

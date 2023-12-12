@@ -1,8 +1,18 @@
-import React from 'react'
+'use client';
+import React, { useEffect, useState } from 'react';
 import './Terms.scss';
+import { useTheme } from '@/themes/ThemeContext';
 export default function Terms() {
+  const [darkMode, setDarkMode] = useState<boolean>();
+  const {isDark} = useTheme();
+
+  useEffect(() => {
+    if (isDark !== null) {
+      setDarkMode(isDark);
+    }
+  }, [isDark])
   return (
-    <section className='terms-container'>
+    <section className={`terms-container ${darkMode ? 'dark': ''}`}>
       <h3>Iron Code Man - Terms and Conditions</h3>
       <p>These Terms and Conditions (&ldquo;Terms&ldquo;) govern your use of the Iron Code Man website (&ldquo;the Website&ldquo;). By accessing or using the Website, you agree to be bound by these Terms. If you do not agree with any part of these Terms, you may not use the Website.</p>
 
@@ -36,7 +46,7 @@ export default function Terms() {
 
       <h3>Governing Law:</h3>
       <p>These Terms are governed by and construed in accordance with the laws of the United States, and any disputes shall be subject to the exclusive jurisdiction of the courts in the United States.
-      By using the Iron Code Man website, you agree to abide by these Terms and Conditions. If you have any questions or concerns, please contact us at [contact@ironcodeman.com].</p>
+      By using the Iron Code Man website, you agree to abide by these Terms and Conditions. If you have any questions or concerns, please contact us at <a href="mailto:contact@ironcodeman.com">contact@ironcodeman.com</a>.</p>
     </section>
   )
 }

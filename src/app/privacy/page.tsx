@@ -1,9 +1,20 @@
-import React from 'react'
+'use client';
+import React, { useEffect, useState } from 'react'
 import './Privacy.scss';
+import { useTheme } from '@/themes/ThemeContext';
 
 export default function Privacy() {
+  const [darkMode, setDarkMode] = useState<boolean>();
+  const {isDark} = useTheme();
+
+  useEffect(() => {
+    if (isDark !== null) {
+      setDarkMode(isDark);
+    }
+  }, [isDark])
+
   return (
-    <section className='privacy-container'>
+    <section className={`privacy-container ${darkMode ? 'dark': ''}`} >
       <h3>Iron Code Man - Privacy Policy</h3>
       <p>This Privacy Policy governs the manner in which Iron Code Man collects, uses, maintains, and discloses information collected from users (each, a &ldquo;User&ldquo;) of the Iron Code Man website (&ldquo;the Website&ldquo;).</p>
 
