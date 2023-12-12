@@ -1,4 +1,4 @@
-/* eslint-disable quote-props */
+'use client';
 import axios from 'axios';
 
 const BASE_URL = window.location.hostname === 'localhost' ? 'http://localhost:5000' : 'https://server.ironcodeman.com';
