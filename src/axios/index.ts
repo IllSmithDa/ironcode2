@@ -1,7 +1,14 @@
 'use client';
 import axios from 'axios';
+let BASE_URL: string;
 
-const BASE_URL = window?.location?.hostname === 'localhost' ? 'http://localhost:5000' : 'https://server.ironcodeman.com';
+if (typeof window !== "undefined") {
+  // Client-side-only code
+  BASE_URL = window?.location?.hostname === 'localhost' ? 'http://localhost:5000' : 'https://server.ironcodeman.com';
+} else [
+  BASE_URL = 'https://server.ironcodeman.com';
+]
+
 //https://www.youtube.com/watch?v=w9eOvKdk5wM
 export const axiosFetch = axios.create({
   baseURL: BASE_URL,
