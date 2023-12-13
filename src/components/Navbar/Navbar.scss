@@ -46,12 +46,12 @@
   position: relative;
   button {
     width: 150px;
-    background-color: $light-grey;
-    border: 1px solid $light-grey;
+    background-color: #C4C4C4;
+    border: 1px solid #C4C4C4;
     &:hover,
     &:active {
-      background-color: $dark-cloud;
-      border: 1px solid $dark-cloud;
+      background-color: #D4D4D4;
+      border: 1px solid #D4D4D4;
     }
     border: none;
   }
@@ -66,23 +66,23 @@
     a {
       display: block;
       width: 150px;
-      background-color: $color-cloud;
-      border: 2px solid $color-cloud;
+      background-color: #C4C4C4;
+      border: 1px solid #C4C4C4;
       font-size: 1.8rem;
       padding: 1rem 3rem;
       cursor: pointer;
       box-sizing: border-box;
       &:hover {
         // color: $color-air;
-        background-color: $dark-cloud;
-        border: 2px solid $dark-cloud;
+        background-color: #D4D4D4;
+        border: 2px solid #D4D4D4;
         text-decoration: 1px solid underline;
       }
     }
   }  
   &.dark {
     a {
-      background-color: #1A1A1A;
+      background-color: #444;
       &:hover {
         background-color: #444;
       }
@@ -154,7 +154,7 @@
   }
   &.dark {
     button {
-      background-color: #1A1A1A;
+      background-color: #333;
       &:hover {
         background-color: #444;
       }
@@ -166,5 +166,28 @@
 @media (max-width: 1400px) {
   .navbar-align {
     width: 100%;
+  }
+}
+
+@media (max-width: 600px) {
+  .navbar-container {
+    padding: 0 0 0 1rem;
+    ul {
+      gap: 0;
+      svg {
+        margin-right: 1rem;
+      }
+    }
+  }
+  .navbar-dropdown {
+    section {
+      position: absolute;
+      right: 0;
+      width: 100vw;
+      height: 100vh;
+      a {
+        width: 100vw;
+      }
+    }
   }
 }
