@@ -154,34 +154,6 @@
   color: $success-green;
 }
 
-.color-cloud {
-  background-color: $color-cloud;
-  &.dark {
-    background-color: #111;
-    h1, h2, svg  {
-      color: #FFF;
-    }
-    button {
-      background-color: #222;
-      border: 2px solid #222;
-      color: #FFF;
-    }
-    .navbar-dropdown {
-      li, ul, a, section {
-        background-color: #3A3A3A;
-        border: 2px solid #3A3A3A;
-        color: #FFF;
-      }
-      a:hover {
-        background-color: #444;
-      }
-    }
-  }
-  h1, h2, svg, button {
-    color: #111;
-  }
-}
-
 .near-white {
   background-color: $near-white;
   &.dark {

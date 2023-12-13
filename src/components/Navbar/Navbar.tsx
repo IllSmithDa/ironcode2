@@ -70,7 +70,7 @@ export default function Navbar({
   
 
   return (
-    <section className={`navbar-container color-cloud ${darkMode ? 'dark': ''}`}>
+    <section className={`navbar-container ${darkMode ? 'dark': ''}`}>
       <section className='navbar-align'>
         <ul>
           <li className='app-icons desktop-items'>
@@ -90,7 +90,7 @@ export default function Navbar({
               <h2>IronCodeMan</h2>
             </Link>
           </li>
-          <li className='app-mobile navbar-dropdown list-left'>
+          <li className={`app-mobile navbar-dropdown list-left  ${darkMode ? 'dark': ''}`}>
             <FontAwesomeIcon
               icon={faBars}
               tabIndex={0}
