@@ -123,6 +123,7 @@ export default function Navbar({
                 tabIndex={0}
                 aria-label='dark mode button'
                 onClick={() => toggleTheme()}
+                style={{ color: '#00AAFF'}}
               />:
               <FontAwesomeIcon
                 icon={faSun}
