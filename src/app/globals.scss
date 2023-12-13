@@ -124,7 +124,12 @@ input, textarea {
 }
 
 @media (max-width: 400px) {
-  p, label, pre  {
+
+  p {
+    font-size: 1.2rem;
+    line-height: 1.7rem;
+  }
+  label, pre  {
     font-size: 1rem;
     word-spacing: 1px;
     line-height: 15px;
@@ -133,7 +138,7 @@ input, textarea {
   
 }
 @media (max-width:  300px) {
-  p, label, pre  {
+  pre  {
     font-size: 9px;
     word-spacing: 1px;
     line-height: 12px;
@@ -142,7 +147,7 @@ input, textarea {
 }
 
 @media (max-width:  275px) {
-  p, label, pre  {
+  pre  {
     font-size: 8px;
     word-spacing: 1px;
     line-height: 12px;
