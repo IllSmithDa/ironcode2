@@ -122,7 +122,7 @@ export default function Navbar({
                     />
                   </button>
                 </article>
-                <h4>Topics Listing</h4>
+                <h4>Topics</h4>
                 {renderData}
               </section>:
               <></>
