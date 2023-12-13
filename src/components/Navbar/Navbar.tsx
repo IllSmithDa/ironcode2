@@ -4,7 +4,7 @@ import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
 import './Navbar.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faBars, faMoon, faRobot, faSun, faUser, faWeightHanging } from '@fortawesome/free-solid-svg-icons';
+import { faBars, faClose, faHome, faMoon, faRobot, faSun, faUser, faWeightHanging } from '@fortawesome/free-solid-svg-icons';
 import ironcodeman from '@/assets/ironcodeman.webp';
 import iron from '@/assets/iron.svg';
 import useLanguages from '@/hooks/LanguageHook';
@@ -37,7 +37,7 @@ export default function Navbar({
   const [languages] = useLanguages();
   const [languageDropdown, setLanguageDropdown] = useState(false);
   const [darkMode, setDarkMode] = useState<boolean>();
-  const [moobileNav, setModbileNav] = useState(false);
+  const [mobileNav, setMobileNav] = useState(false);
   const [languageOption, setLanguageOption] = useState<string>('Select');
   const {concepts} = useSelector((res: ConceptData) => res.conceptsData);
   const {user} = useSelector((res: UserData) => res.userData)
@@ -59,13 +59,14 @@ export default function Navbar({
   }, [name, concepts, isDark])
 
   const renderData = (concepts as ConceptTopic[])?.map((topic) => (
-    <article key={topic.id} onClick={() => setModbileNav(false)}>
-      <Link
-        href={`/topic/${topic.id}`}
-      >
-        {topic.name}
-      </Link>
-    </article>
+    <Link
+      key={topic.id}
+      onClick={() =>  setMobileNav(false)}
+      href={`/topic/${topic.id}`}
+      className={`nav-link  ${darkMode ? 'dark': ''}`}
+    >
+      {topic.name}
+    </Link>
   ))
   
 
@@ -90,17 +91,38 @@ export default function Navbar({
               <h2>IronCodeMan</h2>
             </Link>
           </li>
-          <li className={`app-mobile navbar-dropdown list-left  ${darkMode ? 'dark': ''}`}>
-            <FontAwesomeIcon
-              icon={faBars}
-              tabIndex={0}
-              aria-label='home-icon'
-              onClick={() =>  setModbileNav(!moobileNav)}
-            />
+          <li className={`app-mobile ${darkMode ? 'dark': ''}`}>
+            <button onClick={() =>  setMobileNav(!mobileNav)}>
+              <FontAwesomeIcon
+                icon={faBars}
+                tabIndex={0}
+                aria-label='nav-icon'
+              />
+            </button>
             {
-              moobileNav ?
+              mobileNav ?
               <section>
-                <article onClick={() => setModbileNav(false)}><Link href='/'>Home</Link></article>
+                <article className='home-grouping'>
+                  <div>
+                    <button onClick={() =>  setMobileNav(!mobileNav)}>
+                      <FontAwesomeIcon
+                        icon={faHome}
+                        aria-label='nav-icon'
+                      />
+                    </button>
+                    <Link className='home-nav-btn' onClick={() => setMobileNav(false)} href='/'><h3>Home</h3></Link>
+                  </div>
+                  <button className='align-right' onClick={() => {
+                    setLanguageDropdown(false);
+                    setMobileNav(false);
+                  }}>
+                    <FontAwesomeIcon
+                      icon={faClose}
+                      aria-label='nav-icon'
+                    />
+                  </button>
+                </article>
+                <h4>Topics Listing</h4>
                 {renderData}
               </section>:
               <></>
@@ -118,20 +140,26 @@ export default function Navbar({
           <li className='app-icons'>
             {
               isDark ?
-              <FontAwesomeIcon
-                icon={faMoon}
-                tabIndex={0}
-                aria-label='dark mode button'
+              <button
                 onClick={() => toggleTheme()}
-                style={{ color: '#00AAFF'}}
-              />:
-              <FontAwesomeIcon
-                icon={faSun}
-                tabIndex={0}
-                aria-label='light mode icon'
-                style={{ color: '#EAC117'}}
+              >
+                <FontAwesomeIcon
+                  icon={faMoon}
+                  tabIndex={0}
+                  aria-label='dark mode button'
+                  style={{ color: '#00AAFF'}}
+                />
+              </button>:
+              <button
                 onClick={() => toggleTheme()}
-              />
+              >
+                <FontAwesomeIcon
+                  icon={faSun}
+                  tabIndex={0}
+                  aria-label='light mode icon'
+                  style={{ color: '#EAC117'}}
+                />
+              </button>
             }
             </li>
           <li className={`navbar-dropdown list-right ${darkMode ? 'dark': ''}`}>
@@ -142,7 +170,7 @@ export default function Navbar({
               languageDropdown ?
               <section>
                 {(languages as Language[]).map((entry) => (
-                  <Link key={entry.id} href={`/language/${entry.id}`}onClick={() => selectLanguageDropdown(entry.name)}         className='list-btn'>
+                  <Link key={entry.id} href={`/language/${entry.id}`}onClick={() => selectLanguageDropdown(entry.name)} className='list-btn'>
                     {entry.name}
                   </Link>
                 ))}
@@ -159,10 +187,10 @@ export default function Navbar({
             </li>
         </ul>
         {
-          languageDropdown || moobileNav? 
+          languageDropdown || mobileNav? 
           <div className='silent-modal' onClick={() => {
             setLanguageDropdown(false);
-            setModbileNav(false);
+            setMobileNav(false);
           }}></div>:
           <></>
         }

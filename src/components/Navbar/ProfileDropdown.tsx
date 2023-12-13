@@ -18,13 +18,16 @@ export default function ProfileDropdown({ userData }: { userData: User}) {
     <>
       <li className='app-icons'>
         {
-          userData?.username ? 
-            <FontAwesomeIcon
-            icon={faUser}
-            tabIndex={0}
-            aria-label='light mode icon'
+          userData?.username ?
+          <button
             onClick={() => setToggleModal(!toggleModal)}
-          />:
+          >
+            <FontAwesomeIcon
+              icon={faUser}
+              tabIndex={0}
+              aria-label='light mode icon'
+            />
+          </button>:
           <></>
         }
       </li>
