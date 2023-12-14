@@ -1,4 +1,3 @@
-'use client';
 import axios from 'axios';
 let BASE_URL: string;
 

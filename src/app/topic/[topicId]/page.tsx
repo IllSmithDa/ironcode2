@@ -8,9 +8,6 @@ import LanguageSelect from '@/components/LanguageSelect/LanguageSelect';
 import useLanguages from '@/hooks/LanguageHook';
 import { useDispatch } from 'react-redux';
 import { setTopicSelection } from '@/Redux/Features/TopicsSlice';
-import { listOfMatches } from '@/app/helper/Matches';
-import SlidingBackground from '@/components/SlidingBackground/SlidingBackground';
-import CoolBackground from '@/app/CoolBackground/CoolBackground';
 import { useTheme } from '@/themes/ThemeContext';
 import { parseConcepts } from '@/app/helper/parseData';
 

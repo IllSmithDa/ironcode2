@@ -33,7 +33,7 @@ export default function Home() {
       <section className={`landing ${darkMode ? 'dark': ''}`}>
         <section className={`code-container`}>
           <Image src={mainImg} alt='main title image' />
-          <h1>Iron Code Man</h1>
+          <h1>IronCodeMan</h1>
           <h2>A Reference for Programmers</h2>
           <h4>Select topic or language</h4>
         </section>
