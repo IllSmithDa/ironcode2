@@ -14,27 +14,35 @@ export default function Footer() {
   }, [isDark])
 
   return (
-    <ul className={`footer-container ${darkMode ? 'dark': ''}`}>
-      <li>
-        <Link href='/about' >
-          About
-        </Link>
-      </li>
-      <li>
-        <Link href='/terms' >
-          Terms
-        </Link>
-      </li>
-      <li>
-        <Link href='/privacy'>
-          Privacy
-        </Link>
-      </li>
-      <li>
-       <Link href='/cookies'>
-          Cookies
-        </Link>
-      </li>
-    </ul>
+    <section className={`footer-container ${darkMode ? 'dark': ''}`}>
+      <ul>
+        <li>
+          <Link href='/about' >
+            About
+          </Link>
+        </li>
+        <li>
+          <Link href='/terms' >
+            Terms
+          </Link>
+        </li>
+        <li>
+          <Link href='/privacy'>
+            Privacy
+          </Link>
+        </li>
+        <li>
+         <Link href='/cookies'>
+            Cookies
+          </Link>
+        </li>
+      </ul>
+      <p> 
+        Copyright
+        {' '}
+        {new Date().getFullYear()}
+        . All Rights Reserved. IronCodeMan.
+      </p>
+    </section>
   )
 }
