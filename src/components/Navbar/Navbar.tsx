@@ -140,7 +140,7 @@ export default function Navbar({
           </li>
           <li className={`navbar-dropdown list-right ${darkMode ? 'dark': ''}`}>
             <button type='button' onClick={() => setLanguageDropdown(!languageDropdown)} className='menu-tabs'>
-              {languageId ? languageOption : `Select`} {languageDropdown ? <>&#11205;</> : <>&#11206;</>}
+              {languageId ? languageOption : `Select`} {languageDropdown ? <>▼</> : <>▼</>}
             </button>
           </li>
           <li  className='app-icons'>
