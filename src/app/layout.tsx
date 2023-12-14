@@ -3,7 +3,7 @@ import MainContent from './MainContent';
 import type { Metadata } from 'next'
 import './globals.scss';
 
-const appIcon =  '@/app/ironcode_main.ico';
+const appIcon =  '/ironcodeman_small.png';
 
 export const metadata: Metadata = {
   title: 'IronCodeMan',
@@ -12,6 +12,10 @@ export const metadata: Metadata = {
     icon: appIcon,
     shortcut: appIcon,
     apple: appIcon,
+    other: {
+      rel: 'ironcodeman',
+      url: appIcon 
+    }
   }
 }
 export default function RootLayout({

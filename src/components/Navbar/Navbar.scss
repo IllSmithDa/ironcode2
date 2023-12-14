@@ -232,7 +232,7 @@
   box-sizing:border-box;
   // text-align: center;
   z-index: 3;
-  animation-duration: .75s;
+  animation-duration: .3s;
   animation-name: moveInRight;
   overflow-y: scroll;
   svg {
@@ -383,7 +383,7 @@
     top:0;
     left: 0;
     padding: 2rem;
-    animation-duration: .75s;
+    animation-duration: .3s;
     animation-name: moveInLeft;
     overflow-y: scroll;
     h4 {
