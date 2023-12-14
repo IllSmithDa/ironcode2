@@ -4,6 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React, {useState, useEffect} from 'react';
 import { logout } from '../Auth/UserHandler';
 import { useTheme } from '@/themes/ThemeContext';
+import './Navbar.scss';
 
 export default function ProfileDropdown({ userData }: { userData: User}) {
   const [toggleModal, setToggleModal] = useState<boolean>(false);
@@ -21,6 +22,7 @@ export default function ProfileDropdown({ userData }: { userData: User}) {
           userData?.username ?
           <button
             onClick={() => setToggleModal(!toggleModal)}
+            className='inv-btn'
           >
             <FontAwesomeIcon
               icon={faUser}

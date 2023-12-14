@@ -1,5 +1,5 @@
 'use client';
-import React, {useRef, useState} from 'react';
+import React, {useEffect, useRef, useState} from 'react';
 import './Admin.scss';
 import ConceptForm from './ConceptForm';
 import Loader from '@/components/Loader/Loader';
@@ -8,9 +8,18 @@ import useLanguages from '@/hooks/LanguageHook';
 import EditTopics from '@/app/admin/EditTopics';
 import ConceptList from './ConceptList';
 import DeleteLanguages from './DeleteLanguages';
+import { useTheme } from '@/themes/ThemeContext';
 
 export default function Admin() {
   const [selectTab, setSelectTab] = useState<'new'|'edit-concepts'|'edit-topics'|'concept'|'language'|'loading'>('new')
+  const [darkMode, setDarkMode] = useState<boolean>();
+  const {isDark} = useTheme();
+
+  useEffect(() => {
+    if (isDark !== null) {
+      setDarkMode(isDark);
+    }
+  }, [isDark])
 
   const handleTabChange = (tabVal: 'new'|'edit-concepts'|'edit-topics'|'concept'|'language'|'loading') => {
     const activeTab = `${selectTab}-tab`;
@@ -52,9 +61,9 @@ export default function Admin() {
     }
   }
   return (
-    <section className='admin-page'>
+    <section className={`admin-page ${darkMode ? 'dark': ''}`}>
       <h3>Console Center</h3>
-      <section className='menu-container'>
+      <section className={`menu-container ${darkMode ? 'dark': ''}`}>
         <button
           id='new-tab'
           onClick={() => handleTabChange('new') }
@@ -64,25 +73,25 @@ export default function Admin() {
         </button>
         <button
           id='concept-tab'
-          className='menu-tabs'
+          className={`menu-tabs ${darkMode ? 'dark': ''}`}
           onClick={() => handleTabChange('concept') }>Concept
         </button>
         <button
           id='edit-topics-tab'
-          className='menu-tabs'
+          className={`menu-tabs ${darkMode ? 'dark': ''}`}
           onClick={() => handleTabChange('edit-topics') }>Edit Topics
         </button>
         <button
           id='edit-concepts-tab'
           onClick={() => handleTabChange('edit-concepts') }
-          className='menu-tabs'
+          className={`menu-tabs ${darkMode ? 'dark': ''}`}
         >
           Edit Concepts
         </button>
         <button
           id='language-tab'
           onClick={() => handleTabChange('language') }
-          className='menu-tabs'
+          className={`menu-tabs ${darkMode ? 'dark': ''}`}
         >
           Languages
         </button>

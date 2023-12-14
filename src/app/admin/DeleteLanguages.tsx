@@ -63,9 +63,9 @@ export default function DeleteLanguages() {
 
   return (
     <section className='del-topics-cont'>
-      {
-        renderLanguages
-      }
+      <section className='form-container'>
+        {renderLanguages}
+      </section>
       <Modal isOpen={modalOpen}>
         <section className='topic-delete-modal'>
           <FontAwesomeIcon icon={faClose} onClick={() => setModalOpen(false)} />

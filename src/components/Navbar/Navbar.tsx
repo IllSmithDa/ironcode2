@@ -5,7 +5,7 @@ import Image from 'next/image';
 import './Navbar.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars, faClose, faHome, faMoon, faRobot, faSun, faUser, faWeightHanging } from '@fortawesome/free-solid-svg-icons';
-import ironcodeman from '@/assets/ironcodeman.webp';
+import ironcodeman from '@/app/ironcodeman_icon.png'; 
 import iron from '@/assets/iron.svg';
 import useLanguages from '@/hooks/LanguageHook';
 import { ConceptTopic, Language, User } from '@/types';
