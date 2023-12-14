@@ -12,6 +12,7 @@ import { ConceptTopic, Language, User } from '@/types';
 import { useSelector } from 'react-redux';
 import { useTheme } from '@/themes/ThemeContext';
 import ProfileDropdown from './ProfileDropdown';
+import { useRouter } from 'next/navigation';
 
 interface LanguageData {
   languageData: {
@@ -43,6 +44,7 @@ export default function Navbar({
   const {user} = useSelector((res: UserData) => res.userData)
   const {name} = useSelector((res: LanguageData) => res.languageData.selectedLanguage);
   const {isDark, toggleTheme} = useTheme();
+  const {push} = useRouter();
 
   const selectLanguageDropdown = (val: string) => {
     setLanguageOption(val);
@@ -71,8 +73,8 @@ export default function Navbar({
   
 
   return (
+    <div className={`navbar-background ${darkMode ? 'dark': ''}`} >
     <section className={`navbar-container ${darkMode ? 'dark': ''}`}>
-      <section className='navbar-align'>
         <ul>
           <li className='app-icons desktop-items'>
             <Link href='/'>
@@ -92,41 +94,13 @@ export default function Navbar({
             </Link>
           </li>
           <li className={`app-mobile ${darkMode ? 'dark': ''}`}>
-            <button onClick={() =>  setMobileNav(!mobileNav)}>
+            <button onClick={() =>  setMobileNav(!mobileNav)} className={`navbar-icons ${darkMode ? 'dark': ''}`}>
               <FontAwesomeIcon
                 icon={faBars}
                 tabIndex={0}
                 aria-label='nav-icon'
               />
             </button>
-            {
-              mobileNav ?
-              <section>
-                <article className='home-grouping'>
-                  <div>
-                    <button onClick={() =>  setMobileNav(!mobileNav)}>
-                      <FontAwesomeIcon
-                        icon={faHome}
-                        aria-label='nav-icon'
-                      />
-                    </button>
-                    <Link className='home-nav-btn' onClick={() => setMobileNav(false)} href='/'><h3>Home</h3></Link>
-                  </div>
-                  <button className='align-right' onClick={() => {
-                    setLanguageDropdown(false);
-                    setMobileNav(false);
-                  }}>
-                    <FontAwesomeIcon
-                      icon={faClose}
-                      aria-label='nav-icon'
-                    />
-                  </button>
-                </article>
-                <h4>Topics</h4>
-                {renderData}
-              </section>:
-              <></>
-            }
           </li>
           <li>
             {
@@ -142,6 +116,7 @@ export default function Navbar({
               isDark ?
               <button
                 onClick={() => toggleTheme()}
+                className={`navbar-icons ${darkMode ? 'dark': ''}`}
               >
                 <FontAwesomeIcon
                   icon={faMoon}
@@ -152,6 +127,7 @@ export default function Navbar({
               </button>:
               <button
                 onClick={() => toggleTheme()}
+                className={`navbar-icons ${darkMode ? 'dark': ''}`}
               >
                 <FontAwesomeIcon
                   icon={faSun}
@@ -161,22 +137,11 @@ export default function Navbar({
                 />
               </button>
             }
-            </li>
+          </li>
           <li className={`navbar-dropdown list-right ${darkMode ? 'dark': ''}`}>
             <button type='button' onClick={() => setLanguageDropdown(!languageDropdown)} className='menu-tabs'>
               {languageId ? languageOption : `Select`} {languageDropdown ? <>&#11205;</> : <>&#11206;</>}
             </button>
-            {
-              languageDropdown ?
-              <section>
-                {(languages as Language[]).map((entry) => (
-                  <Link key={entry.id} href={`/language/${entry.id}`}onClick={() => selectLanguageDropdown(entry.name)} className='list-btn'>
-                    {entry.name}
-                  </Link>
-                ))}
-              </section>:
-              <></>
-            }
           </li>
           <li  className='app-icons'>
             {
@@ -187,6 +152,34 @@ export default function Navbar({
             </li>
         </ul>
         {
+          mobileNav ?
+          <section className={`nav-topic-menu ${darkMode ? 'dark': ''}`}>
+            <article className='home-grouping'>
+              <div>
+                <button onClick={() =>  push('/')}>
+                  <FontAwesomeIcon
+                    icon={faHome}
+                    aria-label='nav-icon'
+                  />
+                </button>
+                <Link className='home-nav-btn' onClick={() => setMobileNav(false)} href='/'><h3>Home</h3></Link>
+              </div>
+              <button className='align-right' onClick={() => {
+                setLanguageDropdown(false);
+                setMobileNav(false);
+              }}>
+                <FontAwesomeIcon
+                  icon={faClose}
+                  aria-label='nav-icon'
+                />
+              </button>
+            </article>
+            <h4>Topics</h4>
+            {renderData}
+          </section>:
+          <></>
+        }
+        {
           languageDropdown || mobileNav? 
           <div className='silent-modal' onClick={() => {
             setLanguageDropdown(false);
@@ -194,7 +187,28 @@ export default function Navbar({
           }}></div>:
           <></>
         }
-      </section>
+        {
+          languageDropdown ?
+          <section className={`language-select-dropdown ${darkMode ? 'dark': ''}`}>
+              <button onClick={() => {
+                setLanguageDropdown(false);
+                setMobileNav(false);
+              }}>
+                <FontAwesomeIcon
+                  icon={faClose}
+                  aria-label='nav-icon'
+                />
+              </button>
+            <h4>Select Language</h4>
+            {(languages as Language[]).map((entry) => (
+              <Link key={entry.id} href={`/language/${entry.id}`}onClick={() => selectLanguageDropdown(entry.name)} className='list-btn'>
+                {entry.name}
+              </Link>
+            ))}
+          </section>:
+          <></>
+        }
     </section>
+    </div>
   )
 }
