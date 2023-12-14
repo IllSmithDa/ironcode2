@@ -20,7 +20,7 @@ export async function generateMetadata(
   const previousImages = (await parent).openGraph?.images || []
  
   return {
-    title: `${languageRes.name} Concepts `,
+    title: `${languageRes.name} | IronCodeMan`,
     description: `all concepts for ${languageRes.name}`
   }
 }
