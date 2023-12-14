@@ -34,7 +34,7 @@ export default function Auth({ children }: {
 
 
   return (
-    <section style={{ width: '100%'}}>
+    <section style={{ width: '100%', backgroundColor: '#111'}}>
     {
       isLoading ?
       <Loader />:

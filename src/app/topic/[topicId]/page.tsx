@@ -132,7 +132,7 @@ export default function Home({ params: {topicId}}: Props) {
       {
         isLoading? 
 
-        <section className='loader-container'>
+        <section className={`loader-container  ${darkMode ? 'dark': ''}`}>
           <Loader />
         </section>:
         <section

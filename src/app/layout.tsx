@@ -22,7 +22,7 @@ export default function RootLayout({
     <Provider store={store}>
       <Theme>
         <html lang="en">
-          <body className={`${inter.className}`}>
+          <body id="iron-code-body" className={`${inter.className}`}>
             <Navbar languageId={(languageId as string)} />
             <MainContent topicId={topicId as string} languageId={languageId as string}>
               {children}

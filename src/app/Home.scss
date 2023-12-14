@@ -61,6 +61,16 @@
   }
 }
 
+.main-top-body {
+  color: inherit;
+  background-color: #FFF;
+  width: 100%;
+  &.dark {
+    color: #FFF;
+    background-color: #1A1A1A;
+  }
+}
+
 @media (max-width: 1400px) {
   .main-body {
     width: 100%;

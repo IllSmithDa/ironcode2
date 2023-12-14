@@ -108,6 +108,7 @@
     display: none;
     color: #000;
     border-bottom: 2px solid #000;
+    padding-bottom: 1rem;
   }
   &.dark {
     background-color: #282828;
@@ -182,12 +183,6 @@
     }
   }
 }
-.list-left {
-  display: none;
-  section {
-    // left: -1rem;
-  }
-}
 .list-right {
   @include flexCenter;
 }
@@ -237,6 +232,9 @@
   box-sizing:border-box;
   // text-align: center;
   z-index: 3;
+  animation-duration: .75s;
+  animation-name: moveInRight;
+  overflow-y: scroll;
   svg {
     cursor: pointer;
     font-size: 24px;
@@ -367,6 +365,10 @@
 .home-nav-btn {
   border-bottom: 0;
 }
+
+.modal-open {
+  overflow: hidden;
+}
 @media (max-width: 1400px) {
   .navbar-container {
     width: 100%;
@@ -381,6 +383,9 @@
     top:0;
     left: 0;
     padding: 2rem;
+    animation-duration: .75s;
+    animation-name: moveInLeft;
+    overflow-y: scroll;
     h4 {
       display: block;
     }
@@ -391,6 +396,7 @@
     }
     a {
       font-size: 1.4rem;
+      padding: 1.5rem;
     }
     button {
       display: block;
@@ -419,5 +425,29 @@
         border: 2px solid $dark-cloud;
       }
     }
+  }
+}
+
+@keyframes moveInRight {
+  from {
+    left: -100%;
+    opacity: 0.7;
+  }
+
+  to {
+    left: 0;
+    opacity: 1;
+  }
+}
+
+@keyframes moveInLeft {
+  from {
+    left: 100%;
+    opacity: 0.7;
+  }
+
+  to {
+    left: 0;
+    opacity: 1;
   }
 }

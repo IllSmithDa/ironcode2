@@ -29,7 +29,7 @@ export default function MainContent({
           <TopicsTab languageId={languageId as string} />:
           <></>
         }
-        <section style={{ width:'100%'}}>
+        <section className={`main-top-body ${darkMode ? 'dark': ''}`}>
           {children}
           {
           topicId || languageId ? 

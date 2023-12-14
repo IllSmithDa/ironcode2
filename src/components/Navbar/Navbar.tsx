@@ -60,6 +60,16 @@ export default function Navbar({
     }
   }, [name, concepts, isDark])
 
+  useEffect(() => {
+    if (mobileNav || languageDropdown) {
+      const body = document.getElementById('iron-code-body');
+      if (body) body.classList.add('modal-open')
+    } else {
+      const body = document.getElementById('iron-code-body');
+      if (body) body.classList.remove('modal-open')
+    }
+  }, [mobileNav, languageDropdown])
+
   const renderData = (concepts as ConceptTopic[])?.map((topic) => (
     <Link
       key={topic.id}

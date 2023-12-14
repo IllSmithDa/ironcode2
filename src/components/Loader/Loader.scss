@@ -6,6 +6,7 @@
   width: 100%;
   min-height: 400px;
   @include flexCenter;
+  background-color: inherit;
 }
 .loader {
   border: 1rem solid #f3f3f3; /* Light grey */

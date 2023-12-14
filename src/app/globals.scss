@@ -29,6 +29,9 @@ body {
     background-color: #1A1A1A;
   }
   width: 100%;
+  .modal-open {
+    overflow: hidden;
+  }
 }
 main {
   width: 100%;
