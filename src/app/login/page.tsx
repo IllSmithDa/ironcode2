@@ -1,13 +1,21 @@
 'use client';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useRouter } from 'next/navigation';
 import { Formik, Form, Field } from 'formik';
 import "./Login.scss";
 import * as Yup from 'yup';
 import { axiosFetch } from '../../axios';
+import { useTheme } from '@/themes/ThemeContext';
 
 export default function Login() {
   const [requestErr, setRequestErr] = useState<string>();
+  const {isDark} = useTheme();
+  const [darkMode, setDarkMode] = useState(false);
+  useEffect(() => {
+    if (isDark !== null) {
+      setDarkMode(isDark);
+    }
+  }, [isDark])
   const { push } = useRouter();
 
   const renderForm = ({ 
@@ -21,7 +29,7 @@ export default function Login() {
   }) => (
     <Form
       id="login-form"
-      className="form-login"
+      className={`form-login ${darkMode ? 'dark': ''}`}
     >
       <h1>Login</h1>
       <label>Email:</label>
