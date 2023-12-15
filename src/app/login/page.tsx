@@ -6,6 +6,7 @@ import "./Login.scss";
 import * as Yup from 'yup';
 import { axiosFetch } from '../../axios';
 import { useTheme } from '@/themes/ThemeContext';
+import Footer from '@/components/Footer/Footer';
 
 export default function Login() {
   const [requestErr, setRequestErr] = useState<string>();
@@ -91,45 +92,48 @@ export default function Login() {
   )
 
   return (
-    <Formik
-      validateOnBlur={false}
-      validateOnChange={false}
-      validationSchema={Yup.object().shape({
-        password: Yup.string()
-          .required('Password is required'),
-        email: Yup.string()
-          .required('Email is required')
-          .matches(
-            /^[A-Za-z0-9+_.-]+@(.+)$/,
-            'Please use a valid email'
-          )
-      })}
+    <section className={`login-page ${darkMode ? 'dark': ''}`}>
+      <Formik
+        validateOnBlur={false}
+        validateOnChange={false}
+        validationSchema={Yup.object().shape({
+          password: Yup.string()
+            .required('Password is required'),
+          email: Yup.string()
+            .required('Email is required')
+            .matches(
+              /^[A-Za-z0-9+_.-]+@(.+)$/,
+              'Please use a valid email'
+            )
+        })}
 
-      initialValues={{
-        email: '',
-        password: '',
-      }}
-      onSubmit={async(values) => {
-        // alert('Form Submission activated')
-        try {
-          const dataToSubmit = {
-            email: values.email,
-            password: values.password,
-          };
-          const result = await axiosFetch.post(`/api/users/login-user`,   dataToSubmit, {
-            withCredentials: true,  
-          });
-          if (result.status === 200) {
-            push('/admin');
-          } else {
-            setRequestErr(result.data.err);
+        initialValues={{
+          email: '',
+          password: '',
+        }}
+        onSubmit={async(values) => {
+          // alert('Form Submission activated')
+          try {
+            const dataToSubmit = {
+              email: values.email,
+              password: values.password,
+            };
+            const result = await axiosFetch.post(`/api/users/login-user`,   dataToSubmit, {
+              withCredentials: true,  
+            });
+            if (result.status === 200) {
+              push('/admin');
+            } else {
+              setRequestErr(result.data.err);
+            }
+          } catch (err) {
+            setRequestErr('Error: Email and/or password does not match existing records');
           }
-        } catch (err) {
-          setRequestErr('Error: Email and/or password does not match existing records');
-        }
-      }}
-    >
-      {renderForm}
-    </Formik>
+        }}
+      >
+        {renderForm}
+      </Formik>
+      <Footer />
+    </section>
   )
 }

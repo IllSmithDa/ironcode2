@@ -2,10 +2,19 @@
 @import '../../sass/classes';
 @import '../../sass//variables';
 
+
+.login-page {
+  background-color: $color-air;
+  height: 95vh;
+  &.dark {
+    background-color: #1A1A1A;
+    color: #FFF;
+  }
+}
 #login-form {
   @include smallDimensions;
-  min-height: 95vh;
   background-color: $color-air;
+  min-height: 400px;
   &.dark {
     background-color: #222;
     color: #FFF;
@@ -58,7 +67,12 @@
       background-color: #222;
     }
   }
-  @media (max-width: 500px) {
-    width: 90%;
+
+}
+
+@media (max-width: 500px) {
+  .login-page {
+    width: 96%;
+    margin: auto;
   }
 }
