@@ -267,7 +267,7 @@
       text-decoration: 1px solid underline;
     }
     &.active{
-      background-color: #EEE;
+      background-color: #DADADA;
     }
   }
   &.dark {
@@ -306,12 +306,6 @@
   }
 }
 
-.active {
-  background-color: #DDD;
-  &.dark {
-
-  }
-}
 @media (max-width: 1023px) {
   .desktop-items {
     display: none;
