@@ -9,10 +9,11 @@ import ironcodeman from '@/app/ironcodeman_icon.png';
 import iron from '@/assets/iron.svg';
 import useLanguages from '@/hooks/LanguageHook';
 import { ConceptTopic, Language, User } from '@/types';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { useTheme } from '@/themes/ThemeContext';
 import ProfileDropdown from './ProfileDropdown';
 import { useRouter } from 'next/navigation';
+import { setTopicSelection } from '@/Redux/Features/TopicsSlice';
 
 interface LanguageData {
   languageData: {
@@ -29,6 +30,11 @@ interface UserData {
     user: User
   }
 }
+interface TopicsState {
+  topicsData : {
+    selectedTopic: string,
+  }
+}
 
 export default function Navbar({
   languageId
@@ -43,8 +49,10 @@ export default function Navbar({
   const {concepts} = useSelector((res: ConceptData) => res.conceptsData);
   const {user} = useSelector((res: UserData) => res.userData)
   const {name} = useSelector((res: LanguageData) => res.languageData.selectedLanguage);
+  const { selectedTopic } = useSelector((res:TopicsState) => res.topicsData);
   const {isDark, toggleTheme} = useTheme();
   const {push} = useRouter();
+  const dispatch = useDispatch();
 
   const selectLanguageDropdown = (val: string) => {
     setLanguageOption(val);
@@ -71,14 +79,34 @@ export default function Navbar({
   }, [mobileNav, languageDropdown])
 
   const renderData = (concepts as ConceptTopic[])?.map((topic) => (
-    <Link
-      key={topic.id}
-      onClick={() =>  setMobileNav(false)}
-      href={`/topic/${topic.id}`}
-      className={`nav-link  ${darkMode ? 'dark': ''}`}
-    >
-      {topic.name}
-    </Link>
+    <>
+      {
+        topic.id === selectedTopic ? 
+        <Link
+          id={`${topic.id}_nav`}
+          key={topic.id}
+          onClick={() =>  {
+            setMobileNav(false);
+          
+          }}
+          href={`/topic/${topic.id}`}
+          className={`nav-link ${darkMode ? 'dark': ''} active`}
+        >
+          {topic.name}
+        </Link>:
+        <Link
+          id={`${topic.id}_nav`}
+          key={topic.id}
+          onClick={() =>  {
+            setMobileNav(false);
+          }}
+          href={`/topic/${topic.id}`}
+          className={`nav-link ${darkMode ? 'dark': ''}`}
+        >
+          {topic.name}
+        </Link>
+      }
+    </>
   ))
   
 
@@ -211,7 +239,15 @@ export default function Navbar({
               </button>
             <h4>Select Language</h4>
             {(languages as Language[]).map((entry) => (
-              <Link key={entry.id} href={`/language/${entry.id}`}onClick={() => selectLanguageDropdown(entry.name)} className='list-btn'>
+              <Link 
+                key={entry.id}
+                href={`/language/${entry.id}`}
+                onClick={() => {
+                  selectLanguageDropdown(entry.name)
+                  dispatch(setTopicSelection(''))
+                }}
+                className={`list-btn`}
+              >
                 {entry.name}
               </Link>
             ))}
