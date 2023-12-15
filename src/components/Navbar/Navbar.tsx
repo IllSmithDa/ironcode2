@@ -202,7 +202,7 @@ export default function Navbar({
                 </button>
                 <Link className='home-nav-btn' onClick={() => setMobileNav(false)} href='/'><h3>Home</h3></Link>
               </div>
-              <button className='align-right' onClick={() => {
+              <button className='align-right close-btn' onClick={() => {
                 setLanguageDropdown(false);
                 setMobileNav(false);
               }}>

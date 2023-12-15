@@ -96,9 +96,12 @@
     margin-left: auto;
     cursor: pointer;
     padding: 1rem;
-    background-color: #C4C4C4;
-    border: 1px solid #C4C4C4;
+    background-color: #BFBFBF;
+    border: 1px solid #BFBFBF;
     border: none;
+    svg {
+      font-size: 24px;
+    }
   }
   a {
     font-size: 2rem;
@@ -127,8 +130,8 @@
       border-bottom: 2px solid #FFF;
     }
     button {
-      background-color: #222;
-      border: 2px solid #222;
+      background-color: inherit;
+      border: 1px solid inherit;
       color: #FFF;
       &:hover {
         background-color: #313131;
@@ -142,6 +145,7 @@
   position: relative;
   button {
     width: 150px;
+    height: 47px;
     background-color: #C4C4C4;
     border: 1px solid #C4C4C4;
     &:hover,
