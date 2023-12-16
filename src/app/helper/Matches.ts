@@ -200,4 +200,12 @@ export const listOfMatches = [
     keyword: 'double',
     color: '#00BFFF',
   },
+  {
+    keyword: '3.45F',
+    color: '#00BFFF',
+  },
+  {
+    keyword: '3.14159D',
+    color: '#00BFFF',
+  },
 ]
