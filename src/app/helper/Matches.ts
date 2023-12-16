@@ -208,4 +208,12 @@ export const listOfMatches = [
     keyword: '3.14159D',
     color: '#00BFFF',
   },
+  {
+    keyword: 'float32',
+    color: '#00BFFF',
+  },
+  {
+    keyword: 'float64',
+    color: '#00BFFF',
+  },
 ]
