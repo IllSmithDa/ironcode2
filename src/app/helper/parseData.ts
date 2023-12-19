@@ -16,8 +16,12 @@ export const parseConcepts = (htmlString: string, elementId: string) => {
   newText = newText?.replace(/\<iostream\>/g, `&#60;${`iostream`}&#62;`) as string;
   newText = newText?.replace(/\#include/g, `<font color="#00BFFF">${'#include'}</font>`) as string;
   newText = newText?.replace(/\'Joe\'/g, `<font color="#E42217">'Joe'</font>`) as string;
+  newText = newText?.replace(/\'Sam\'/g, `<font color="#E42217">'Sam'</font>`) as string;
+  newText = newText?.replace(/\'David\'/g, `<font color="#E42217">'David'</font>`) as string;
   newText = newText?.replace(/\'Z\'/g, `<font color="#E42217">'Z'</font>`) as string;
   newText = newText?.replace(/\"Joe\"/g, `<font color="#E42217">"Joe"</font>`) as string;
+  newText = newText?.replace(/\"Sam\"/g, `<font color="#E42217">"Sam"</font>`) as string;
+  newText = newText?.replace(/\"David\"/g, `<font color="#E42217">"David"</font>`) as string;
   newText = newText?.replace(/\"Hello World!\"/g, `<font color="#E42217">"Hello World!"</font>`) as string;
   newText = newText?.replace(/\'Hello World!\'/g, `<font color="#E42217">'Hello World!'</font>`) as string;
   if (element) element.innerHTML = newText as string;
