@@ -216,4 +216,16 @@ export const listOfMatches = [
     keyword: 'float64',
     color: '#00BFFF',
   },
+  {
+    keyword: 'function',
+    color: '#00BFFF',
+  },
+  {
+    keyword: 'for',
+    color: '#00BFFF',
+  },
+  {
+    keyword: 'length',
+    color: '#00BFFF',
+  },
 ]
