@@ -418,6 +418,9 @@
       border: none;
     }
     &.dark {
+      button {
+        border: none;
+      }
       a {
         background-color: #282828;
         border-bottom: 2px solid #333;
