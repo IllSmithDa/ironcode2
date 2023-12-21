@@ -98,7 +98,7 @@ export default function TopicsTab({
         </>:
         <></>
       }
-      <h4>Iterable</h4>
+      <h4>Iterables</h4>
       {
         topics.length ? 
         <>

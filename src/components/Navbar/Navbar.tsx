@@ -224,7 +224,7 @@ export default function Navbar({
             {renderData('basic')}
             <h4>Data Structure</h4>
             {renderData('data')}
-            <h4>Iterable</h4>
+            <h4>Iterables</h4>
             {renderData('iterables')}
             <h4>Classes</h4>
             {renderData('class')}
