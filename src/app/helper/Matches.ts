@@ -228,4 +228,12 @@ export const listOfMatches = [
     keyword: 'length',
     color: '#00BFFF',
   },
+  {
+    keyword: '6',
+    color: '#00BFFF',
+  },
+  {
+    keyword: '3',
+    color: '#00BFFF',
+  },
 ]
