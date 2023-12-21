@@ -48,41 +48,80 @@ export default function TopicsTab({
   }, [selectedTopic, topics, dispatch, languageId, isDark, defaultMode])
 
 
-  const renderData = (topics as ConceptTopic[]).map((topic) => (
-    <section key={topic.id}>
+  const renderData = (category: string) => {
+    return (
+      <>
       {
-        topic.id === topicId ?
-        <Link
-          key={`topic_${topic.id}`}
-          href={`/topic/${topic.id}`}
-          className={`active-tab ${darkMode ? 'dark': ''}`}
-        >
-          {topic.name}
-        </Link>:
-        <Link
-          key={`topic_${topic.id}`}
-          href={`/topic/${topic.id}`}
-        >
-          {topic.name}
-        </Link>
+        (topics as ConceptTopic[]).filter(topic => topic.category === category).map((topic) => (
+          <section key={topic.id}>
+            {
+              topic.id === topicId ?
+              <Link
+                key={`topic_${topic.id}`}
+                href={`/topic/${topic.id}`}
+                className={`active-tab ${darkMode ? 'dark': ''}`}
+              >
+                {topic.name}
+              </Link>:
+              <Link
+                key={`topic_${topic.id}`}
+                href={`/topic/${topic.id}`}
+              >
+                {topic.name}
+              </Link>
+            }
+          </section>
+        ))
       }
-    </section>
-  ))
+      </>
+    )
+  };
+
   return (
     <section
       id='topic-tab'
       className={`topics-container near-white ${darkMode ? 'dark': ''}`}
     >
-      <h4>Topics</h4>
-      <>
+      <h4>Basics</h4>
       {
         topics.length ? 
         <>
-          {renderData}
+          {renderData('basic')}
         </>:
         <></>
       }
-      </>
+      <h4>Data Structure</h4>
+      {
+        topics.length ? 
+        <>
+          {renderData('data')}
+        </>:
+        <></>
+      }
+      <h4>Iterable</h4>
+      {
+        topics.length ? 
+        <>
+          {renderData('iterables')}
+        </>:
+        <></>
+      }
+      <h4>Classes</h4>
+      {
+        topics.length ? 
+        <>
+          {renderData('class')}
+        </>:
+        <></>
+      }
+      <h4>Regex</h4>
+      {
+        topics.length ? 
+        <>
+          {renderData('regex')}
+        </>:
+        <></>
+      }
     </section>
   )
 }

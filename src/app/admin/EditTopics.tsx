@@ -17,6 +17,8 @@ export default function EditTopics() {
   const [editList, setEditList] = useState<ConceptTopic []>([]);
   const [editModalOpen, setEditModalOpen] = useState(false);
   const [delModalOpen, setDelModalOpen] = useState(false);
+  const [currentRank, setCurrentRank] = useState<number>();
+  const [currentCategory, setCurrentCategory] = useState('');
   const [editName, setEditName] = useState<string>('');
   const [editDescription, setEditDescription] = useState<string>('');
   const [err, setErr] = useState<string>();
@@ -40,12 +42,20 @@ export default function EditTopics() {
         setErr('Error: Name cannot be blank!');
         return;
       }
+      if(!currentRank) {
+        setErr('Error: Rank cannot be blank!');
+      }
+      if(currentCategory === '' || currentCategory === null || currentCategory === undefined) {
+        setErr('Error: Category cannot be blank');
+      }
       const updatedTopics = (topics as ConceptTopic []).map((topic) => {
         if (topic.id === currentTopic?.id) {
           return {
             ...topic,
             name: editName,
             description: editDescription,
+            rank: currentRank as number,
+            category: currentCategory,
           };
         } else {
           return topic
@@ -56,6 +66,8 @@ export default function EditTopics() {
         name: editName,
         description: editDescription,
         topicId: currentTopic?.id,
+        rank: currentRank as number,
+        category: currentCategory,
       }
       const url = `/api/concept/update-topic`;
       await axiosFetch.put(url, data);
@@ -76,10 +88,16 @@ export default function EditTopics() {
         setEditModalOpen(true);
         setCurrentTopic(topic)
         setEditName(topic.name);
+        setCurrentRank(topic.rank);
+        setCurrentCategory(topic.category)
         setEditDescription(topic.description);
       }}/>
       <h4>{topic.name}</h4>
       <p>{topic.description}</p>
+      <>
+        <p>Category: {topic.category}</p>
+        <p>Rank: {topic.rank}</p>
+      </>
     </section>
   ))
 
@@ -96,12 +114,30 @@ export default function EditTopics() {
           }} />
           <h4>Edit topic: {currentTopic?.name} </h4>
           <section className='form-group'>
-            <label>Edit Name (optional)</label>
+            <label>Edit Name</label>
             <input
               value={editName}
               type='text'
               onChange={(e) => setEditName(e.target.value)}
               placeholder={`Edit Name of ${currentTopic?.name}`}
+            />
+          </section>
+          <section className='form-group'>
+            <label>Edit Category</label>
+            <input
+              value={currentCategory}
+              type='text'
+              onChange={(e) => setCurrentCategory(e.target.value)}
+              placeholder={`Edit Category of ${currentTopic?.name}`}
+            />
+          </section>
+          <section>
+          <label>Edit Rank</label>
+            <input
+              value={currentRank}
+              type='number'
+              onChange={(e) => setCurrentRank(e.target.value as unknown as number)}
+              placeholder={`Edit Rank of ${currentTopic?.name}`}
             />
           </section>
           <section className='form-group'>

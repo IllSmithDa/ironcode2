@@ -7,17 +7,18 @@
   background-color: #EFEFEF;
 
   h4 {
-    margin: 1rem;
+    margin: 1.5rem 1rem;
+    border-bottom: 1px solid ;
   }
   a {
     display: block;
+    font-size: 1.5rem;
     border: none;
     text-decoration: none;
     width: 200px;
     padding: 1rem;
     cursor: pointer;
     box-sizing: border-box;
-    font-size: 1.8rem;
     text-align: left;
     &:hover {
       background-color: $color-cloud;

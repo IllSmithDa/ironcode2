@@ -24,7 +24,9 @@ export interface ConceptTopic {
   id: string,
   name: string,
   description: string,
-  created_at: string
+  created_at: string,
+  rank: number,
+  category: string,
 }
 export interface User {
   id: string,
