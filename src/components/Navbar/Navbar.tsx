@@ -78,36 +78,44 @@ export default function Navbar({
     }
   }, [mobileNav, languageDropdown])
 
-  const renderData = (concepts as ConceptTopic[])?.map((topic) => (
-    <>
-      {
-        topic.id === selectedTopic ? 
-        <Link
-          id={`${topic.id}_nav`}
-          key={topic.id}
-          onClick={() =>  {
-            setMobileNav(false);
-          
-          }}
-          href={`/topic/${topic.id}`}
-          className={`nav-link ${darkMode ? 'dark': ''} active`}
-        >
-          {topic.name}
-        </Link>:
-        <Link
-          id={`${topic.id}_nav`}
-          key={topic.id}
-          onClick={() =>  {
-            setMobileNav(false);
-          }}
-          href={`/topic/${topic.id}`}
-          className={`nav-link ${darkMode ? 'dark': ''}`}
-        >
-          {topic.name}
-        </Link>
-      }
-    </>
-  ))
+  const renderData = (category: string) => {
+    return (
+      <>
+        {
+          (concepts as ConceptTopic[])?.filter(topic => topic.category === category).map((topic) => (
+            <>
+              {
+                topic.id === selectedTopic ? 
+                <Link
+                  id={`${topic.id}_nav`}
+                  key={topic.id}
+                  onClick={() =>  {
+                    setMobileNav(false);
+                  
+                  }}
+                  href={`/topic/${topic.id}`}
+                  className={`nav-link ${darkMode ? 'dark': ''} active`}
+                >
+                  {topic.name}
+                </Link>:
+                <Link
+                  id={`${topic.id}_nav`}
+                  key={topic.id}
+                  onClick={() =>  {
+                    setMobileNav(false);
+                  }}
+                  href={`/topic/${topic.id}`}
+                  className={`nav-link ${darkMode ? 'dark': ''}`}
+                >
+                  {topic.name}
+                </Link>
+              }
+            </>
+          ))
+        }
+      </>
+    )
+  }
   
 
   return (
@@ -212,8 +220,16 @@ export default function Navbar({
                 />
               </button>
             </article>
-            <h4>Topics</h4>
-            {renderData}
+            <h4>Basics</h4>
+            {renderData('basic')}
+            <h4>Data Structure</h4>
+            {renderData('data')}
+            <h4>Iterable</h4>
+            {renderData('iterables')}
+            <h4>Classes</h4>
+            {renderData('class')}
+            <h4>Regex</h4>
+            {renderData('regex')}
           </section>:
           <></>
         }
