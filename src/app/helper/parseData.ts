@@ -24,6 +24,8 @@ export const parseConcepts = (htmlString: string, elementId: string) => {
   newText = newText?.replace(/\"David\"/g, `<font color="#E42217">"David"</font>`) as string;
   newText = newText?.replace(/\"Hello World!\"/g, `<font color="#E42217">"Hello World!"</font>`) as string;
   newText = newText?.replace(/\'Hello World!\'/g, `<font color="#E42217">'Hello World!'</font>`) as string;
+  newText = newText?.replace(/\"More than three cars\"/g, `<font color="#E42217">"More than three cars"</font>`) as string;
+  newText = newText?.replace(/\'More than three cars\'/g, `<font color="#E42217">'More than three cars'</font>`) as string;
   newText = newText?.replace(/\"More than three cars\"/g, `<font color="#E42217">"Less than or equal to three cars"</font>`) as string;
   newText = newText?.replace(/\'Less than or equal to three cars\'/g, `<font color="#E42217">'Less than or equal to three cars'</font>`) as string;
   if (element) element.innerHTML = newText as string;
