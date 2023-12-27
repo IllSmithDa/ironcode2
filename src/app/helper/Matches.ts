@@ -260,4 +260,8 @@ export const listOfMatches = [
     keyword: 'end',
     color: '#00BFFF',
   },
+  {
+    keyword: 'println!',
+    color: '#00BFFF',
+  },
 ]
