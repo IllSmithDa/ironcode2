@@ -240,4 +240,8 @@ export const listOfMatches = [
     keyword: 'if',
     color: '#00BFFF',
   },
+  {
+    keyword: 'else',
+    color: '#00BFFF',
+  },
 ]
