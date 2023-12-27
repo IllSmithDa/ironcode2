@@ -71,7 +71,10 @@ export const listOfMatches = [
   ,{
     keyword: 'fun',
     color: '#00BFFF'
-  }
+  } ,{
+    keyword: 'Int',
+    color: '#00BFFF'
+  },
   ,{
     keyword: 'int',
     color: '#00BFFF'
