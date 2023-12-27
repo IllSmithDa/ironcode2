@@ -244,4 +244,8 @@ export const listOfMatches = [
     keyword: 'else',
     color: '#00BFFF',
   },
+  {
+    keyword: 'elif',
+    color: '#00BFFF',
+  },
 ]
