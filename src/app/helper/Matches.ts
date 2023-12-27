@@ -256,4 +256,8 @@ export const listOfMatches = [
     keyword: 'elseif',
     color: '#00BFFF',
   },
+  {
+    keyword: 'end',
+    color: '#00BFFF',
+  },
 ]
