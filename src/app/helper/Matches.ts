@@ -1,9 +1,5 @@
 export const listOfMatches = [
   {
-    keyword: 'int',
-    color: '#00BFFF',
-  },
-  {
     keyword: 'var',
     color: '#00BFFF',
   }, 
@@ -70,13 +66,6 @@ export const listOfMatches = [
   }
   ,{
     keyword: 'fun',
-    color: '#00BFFF'
-  } ,{
-    keyword: 'Int',
-    color: '#00BFFF'
-  },
-  ,{
-    keyword: 'int',
     color: '#00BFFF'
   },{
     keyword: 'class',
