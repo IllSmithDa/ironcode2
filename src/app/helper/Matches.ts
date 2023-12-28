@@ -256,8 +256,4 @@ export const listOfMatches = [
     keyword: 'println!',
     color: '#00BFFF',
   },
-  {
-    keyword: '// indent to indicate block of code',
-    color: '#D4A017',
-  },
 ]
