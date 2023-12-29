@@ -269,10 +269,6 @@ export const listOfMatches = [
     color: '#00BFFF',
   },
   {
-    keyword: 'when',
-    color: '#00BFFF',
-  },
-  {
     keyword: 'match',
     color: '#00BFFF',
   },
