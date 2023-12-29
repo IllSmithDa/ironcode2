@@ -44,5 +44,10 @@ export const parseConcepts = (htmlString: string, elementId: string) => {
   newText = newText?.replace(/Int/g, `<font color="#00BFFF">${`Int`}</font>`) as string;
   newText = newText?.replace(/println!/g, `<font color="#00BFFF">${`println!`}</font>`) as string;
   newText = newText?.replace(/\/\/ indent to indicate block of code/g, `<font color="#11BB22">// indent to indicate block of code</font>`) as string;
+  newText = newText?.replace(/\"Yes\"/g, `<font color="#E42217">"Yes"</font>`) as string;
+  newText = newText?.replace(/\'Yes\'/g, `<font color="#E42217">'Yes'</font>`) as string;
+  newText = newText?.replace(/\"No\"/g, `<font color="#E42217">"No"</font>`) as string;
+  newText = newText?.replace(/\'No\'/g, `<font color="#E42217">'No'</font>`) as string;
+  newText = newText?.replace(/\{\}/g, `<font color="#E42217">"{}"</font>`) as string;
   if (element) element.innerHTML = newText as string;
 };
