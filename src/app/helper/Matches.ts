@@ -276,4 +276,8 @@ export const listOfMatches = [
     keyword: 'break',
     color: '#00BFFF',
   },
+  {
+    keyword: '_',
+    color: '#00BFFF',
+  },
 ]
