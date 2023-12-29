@@ -261,6 +261,10 @@ export const listOfMatches = [
     color: '#00BFFF',
   },
   {
+    keyword: '1',
+    color: '#00BFFF',
+  },
+  {
     keyword: 'switch',
     color: '#00BFFF',
   },
