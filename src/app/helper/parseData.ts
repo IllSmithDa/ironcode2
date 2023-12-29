@@ -24,6 +24,14 @@ export const parseConcepts = (htmlString: string, elementId: string) => {
   newText = newText?.replace(/\"David\"/g, `<font color="#E42217">"David"</font>`) as string;
   newText = newText?.replace(/\"Hello World!\"/g, `<font color="#E42217">"Hello World!"</font>`) as string;
   newText = newText?.replace(/\'Hello World!\'/g, `<font color="#E42217">'Hello World!'</font>`) as string;
+  newText = newText?.replace(/\"One car\"/g, `<font color="#E42217">"One car"</font>`) as string;
+  newText = newText?.replace(/\'One car\'/g, `<font color="#E42217">'One car'</font>`) as string;
+  newText = newText?.replace(/\"Two cars\"/g, `<font color="#E42217">"Two car"</font>`) as string;
+  newText = newText?.replace(/\'Two cars\'/g, `<font color="#E42217">'Two cars'</font>`) as string;
+  newText = newText?.replace(/\"Three cars\"/g, `<font color="#E42217">"Three car"</font>`) as string;
+  newText = newText?.replace(/\'Three cars\'/g, `<font color="#E42217">'Three cars'</font>`) as string;
+  newText = newText?.replace(/\"More than three\"/g, `<font color="#E42217">"More than three"</font>`) as string;
+  newText = newText?.replace(/\'More than three\'/g, `<font color="#E42217">'More than three'</font>`) as string;
   newText = newText?.replace(/\"More than three cars\"/g, `<font color="#E42217">"More than three cars"</font>`) as string;
   newText = newText?.replace(/\'More than three cars\'/g, `<font color="#E42217">'More than three cars'</font>`) as string;
   newText = newText?.replace(/\"Equal to three cars\"/g, `<font color="#E42217">"Equal to three cars"</font>`) as string;

@@ -256,4 +256,24 @@ export const listOfMatches = [
     keyword: 'println!',
     color: '#00BFFF',
   },
+  {
+    keyword: '2',
+    color: '#00BFFF',
+  },
+  {
+    keyword: 'switch',
+    color: '#00BFFF',
+  },
+  {
+    keyword: 'when',
+    color: '#00BFFF',
+  },
+  {
+    keyword: 'match',
+    color: '#00BFFF',
+  },
+  {
+    keyword: 'break',
+    color: '#00BFFF',
+  },
 ]
