@@ -288,4 +288,8 @@ export const listOfMatches = [
     keyword: '4',
     color: '#00BFFF',
   },
+  {
+    keyword: 'i32',
+    color: '#00BFFF',
+  },
 ]
