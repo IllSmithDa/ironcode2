@@ -310,7 +310,11 @@ export const listOfMatches = [
   },
   {
     keyword: '15',
-    color: '-10000',
+    color: '#00BFFF',
+  },
+  {
+    keyword: '-10000',
+    color: '#00BFFF',
   },
   {
     keyword: '11000000000',
