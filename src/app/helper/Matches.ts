@@ -197,7 +197,7 @@ export const listOfMatches = [
     color: '#00BFFF',
   },
   {
-    keyword: '3.14159D',
+    keyword: '3.14159265D',
     color: '#00BFFF',
   },
   {
@@ -325,6 +325,14 @@ export const listOfMatches = [
     color: '#00BFFF',
   },
   {
+    keyword: '11000000000L',
+    color: '#00BFFF',
+  },
+  {
+    keyword: '11799312874L',
+    color: '#00BFFF',
+  },
+  {
     keyword: 'uint',
     color: '#00BFFF',
   },
@@ -378,6 +386,22 @@ export const listOfMatches = [
   },
   {
     keyword: 'Int64',
+    color: '#00BFFF',
+  },
+  {
+    keyword: 'uint8',
+    color: '#00BFFF',
+  },
+  {
+    keyword: 'int16',
+    color: '#00BFFF',
+  },
+  {
+    keyword: 'int64',
+    color: '#00BFFF',
+  },
+  {
+    keyword: 'uint64',
     color: '#00BFFF',
   },
 ]
