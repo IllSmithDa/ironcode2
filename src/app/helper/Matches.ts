@@ -353,6 +353,10 @@ export const listOfMatches = [
     color: '#00BFFF',
   },
   {
+    keyword: 'Character',
+    color: '#00BFFF',
+  },
+  {
     keyword: 'UInt8',
     color: '#00BFFF',
   },
