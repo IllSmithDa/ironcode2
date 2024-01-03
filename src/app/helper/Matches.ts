@@ -346,20 +346,4 @@ export const listOfMatches = [
     keyword: 'uint64',
     color: '#00BFFF',
   },
-  {
-    keyword: '*',
-    color: '#00BFFF',
-  },
-  {
-    keyword: '+',
-    color: '#00BFFF',
-  },
-  {
-    keyword: '-',
-    color: '#00BFFF',
-  },
-  {
-    keyword: '/',
-    color: '#00BFFF',
-  },
 ]
