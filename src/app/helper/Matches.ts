@@ -185,7 +185,7 @@ export const listOfMatches = [
     color: '#00BFFF',
   },
   {
-    keyword: '3.14159',
+    keyword: '3.14159265',
     color: '#00BFFF',
   },
   {
@@ -290,6 +290,86 @@ export const listOfMatches = [
   },
   {
     keyword: 'i32',
+    color: '#00BFFF',
+  },
+  {
+    keyword: 'unsigned',
+    color: '#00BFFF',
+  },
+  {
+    keyword: 'signed',
+    color: '#00BFFF',
+  },
+  {
+    keyword: 'long',
+    color: '#00BFFF',
+  },
+  {
+    keyword: 'short',
+    color: '#00BFFF',
+  },
+  {
+    keyword: '15',
+    color: '-10000',
+  },
+  {
+    keyword: '11000000000',
+    color: '#00BFFF',
+  },
+  {
+    keyword: '11799312874',
+    color: '#00BFFF',
+  },
+  {
+    keyword: 'uint',
+    color: '#00BFFF',
+  },
+  {
+    keyword: 'ushort',
+    color: '#00BFFF',
+  },
+  {
+    keyword: 'Byte',
+    color: '#00BFFF',
+  },
+  {
+    keyword: 'Short',
+    color: '#00BFFF',
+  },
+  {
+    keyword: 'Long',
+    color: '#00BFFF',
+  },
+  {
+    keyword: 'Float',
+    color: '#00BFFF',
+  },
+  {
+    keyword: 'Double',
+    color: '#00BFFF',
+  },
+  {
+    keyword: 'Char',
+    color: '#00BFFF',
+  },
+  {
+    keyword: 'UInt8',
+    color: '#00BFFF',
+  },
+  {
+    keyword: 'UInt64',
+    color: '#00BFFF',
+  },
+  {
+    keyword: 'Int8',
+    color: '#00BFFF',
+  },
+  {
+    keyword: 'Int16',
+    color: '#00BFFF',
+  },
+  {
+    keyword: 'Int64',
     color: '#00BFFF',
   },
 ]
