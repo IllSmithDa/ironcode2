@@ -280,4 +280,12 @@ export const listOfMatches = [
     keyword: '_',
     color: '#00BFFF',
   },
+  {
+    keyword: 'sub',
+    color: '#00BFFF',
+  },
+  {
+    keyword: '4',
+    color: '#00BFFF',
+  },
 ]
