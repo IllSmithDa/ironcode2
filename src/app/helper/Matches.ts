@@ -231,11 +231,11 @@ export const listOfMatches = [
     color: '#00BFFF',
   },
   {
-    keyword: '1',
+    keyword: 'switch',
     color: '#00BFFF',
   },
   {
-    keyword: 'switch',
+    keyword: 'default',
     color: '#00BFFF',
   },
   {
@@ -244,10 +244,6 @@ export const listOfMatches = [
   },
   {
     keyword: 'break',
-    color: '#00BFFF',
-  },
-  {
-    keyword: '_',
     color: '#00BFFF',
   },
   {
@@ -348,6 +344,22 @@ export const listOfMatches = [
   },
   {
     keyword: 'uint64',
+    color: '#00BFFF',
+  },
+  {
+    keyword: '*',
+    color: '#00BFFF',
+  },
+  {
+    keyword: '+',
+    color: '#00BFFF',
+  },
+  {
+    keyword: '-',
+    color: '#00BFFF',
+  },
+  {
+    keyword: '/',
     color: '#00BFFF',
   },
 ]
