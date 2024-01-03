@@ -86,10 +86,17 @@ export const listOfMatches = [
   {
     keyword: 'echo',
     color: '#00BFFF'
-  }
-  ,
+  },
   {
     keyword: 'fn',
+    color: '#00BFFF'
+  },
+  {
+    keyword: 'case',
+    color: '#00BFFF'
+  },
+  {
+    keyword: 'when',
     color: '#00BFFF'
   },
   {
@@ -172,27 +179,7 @@ export const listOfMatches = [
     color: '#D4A017'
   },
   {
-    keyword: '3.45f',
-    color: '#00BFFF',
-  },
-  {
-    keyword: '3.45',
-    color: '#00BFFF',
-  },
-  {
-    keyword: '3.14159265',
-    color: '#00BFFF',
-  },
-  {
     keyword: 'double',
-    color: '#00BFFF',
-  },
-  {
-    keyword: '3.45F',
-    color: '#00BFFF',
-  },
-  {
-    keyword: '3.14159265D',
     color: '#00BFFF',
   },
   {
@@ -213,14 +200,6 @@ export const listOfMatches = [
   },
   {
     keyword: 'length',
-    color: '#00BFFF',
-  },
-  {
-    keyword: '6',
-    color: '#00BFFF',
-  },
-  {
-    keyword: '3',
     color: '#00BFFF',
   },
   {
@@ -249,10 +228,6 @@ export const listOfMatches = [
   },
   {
     keyword: 'println!',
-    color: '#00BFFF',
-  },
-  {
-    keyword: '2',
     color: '#00BFFF',
   },
   {
@@ -301,30 +276,6 @@ export const listOfMatches = [
   },
   {
     keyword: 'short',
-    color: '#00BFFF',
-  },
-  {
-    keyword: '15',
-    color: '#00BFFF',
-  },
-  {
-    keyword: '-10000',
-    color: '#00BFFF',
-  },
-  {
-    keyword: '11000000000',
-    color: '#00BFFF',
-  },
-  {
-    keyword: '11799312874',
-    color: '#00BFFF',
-  },
-  {
-    keyword: '11000000000L',
-    color: '#00BFFF',
-  },
-  {
-    keyword: '11799312874L',
     color: '#00BFFF',
   },
   {
