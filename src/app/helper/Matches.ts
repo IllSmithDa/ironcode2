@@ -56,11 +56,6 @@ export const listOfMatches = [
     color: '#00BFFF',
   },
   {
-    keyword: '2',
-    color: '#00BFFF',
-  },
-
-  {
     keyword: 'char',
     color: '#00BFFF'
   }
