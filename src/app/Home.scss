@@ -3,13 +3,13 @@
 
 .homepage-container {
   display: flex;
-  width: 1300px;
+  width: 1500px;
 }
 .main-app {
   margin-top: 47px;
 }
 .main-body {
-  width: 1300px;
+  width: 1500px;
   margin: auto;
   display: flex;
 }
@@ -73,7 +73,7 @@
   }
 }
 
-@media (max-width: 1400px) {
+@media (max-width: 1600px) {
   .main-body {
     width: 100%;
   }

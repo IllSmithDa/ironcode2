@@ -30,7 +30,7 @@
   background-color: $color-cloud;
   display: flex;
   justify-content: space-between;
-  width: 1300px;
+  width: 1500px;
   margin: auto;
   position: relative;
 
@@ -384,7 +384,7 @@
 .modal-open {
   overflow: hidden;
 }
-@media (max-width: 1400px) {
+@media (max-width: 1600px) {
   .navbar-container {
     width: 100%;
   }
