@@ -342,4 +342,12 @@ export const listOfMatches = [
     keyword: 'uint64',
     color: '#00BFFF',
   },
+  {
+    keyword: 'mod',
+    color: '#00BFFF',
+  },
+  {
+    keyword: 'pow',
+    color: '#00BFFF',
+  },
 ]
