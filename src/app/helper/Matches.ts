@@ -350,12 +350,4 @@ export const listOfMatches = [
     keyword: 'pow',
     color: '#00BFFF',
   },
-  {
-    keyword: '(',
-    color: '#A52A2A',
-  },
-  {
-    keyword: ')',
-    color: '#A52A2A',
-  },
 ]
