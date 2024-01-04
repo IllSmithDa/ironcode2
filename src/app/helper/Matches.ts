@@ -164,10 +164,6 @@ export const listOfMatches = [
     color: '#00BFFF'
   },
   {
-    keyword: 'fmt.Print',
-    color: '#00BFFF'
-  },
-  {
     keyword: 'fmt.Println',
     color: '#00BFFF'
   },
