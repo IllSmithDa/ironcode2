@@ -168,6 +168,10 @@ export const listOfMatches = [
     color: '#00BFFF'
   },
   {
+    keyword: 'fmt.Println',
+    color: '#00BFFF'
+  },
+  {
     keyword: 'Console.WriteLine',
     color: '#00BFFF'
   },
