@@ -354,4 +354,12 @@ export const listOfMatches = [
     keyword: 'false',
     color: '#00BFFF',
   },
+  {
+    keyword: 'this',
+    color: '#00BFFF',
+  },
+  {
+    keyword: 'shift',
+    color: '#00BFFF',
+  },
 ]
