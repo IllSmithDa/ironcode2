@@ -70,9 +70,5 @@ export const parseConcepts = (htmlString: string, elementId: string) => {
   newText = newText?.replace(/\"Toyota\"/g, `<font color="#E42217">"Toyota"</font>`) as string;
   newText = newText?.replace(/\{/g, `<font color="#7CFC00">{</font>`) as string;
   newText = newText?.replace(/\}/g, `<font color="#7CFC00">}</font>`) as string;
-  newText = newText?.replace(/\+/g, `<font color="#7CFC00">+</font>`) as string;
-  newText = newText?.replace(/\-/g, `<font color="#7CFC00">-</font>`) as string;
-  newText = newText?.replace(/\//g, `<font color="#7CFC00">/</font>`) as string;
-  newText = newText?.replace(/\*/g, `<font color="#7CFC00">*</font>`) as string;
   if (element) element.innerHTML = newText as string;
 };
