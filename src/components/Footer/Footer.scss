@@ -2,7 +2,10 @@
 @import '../../sass/mixins';
 .footer-container {
   text-align: center;
-  padding-top: 20rem;
+  position: absolute;
+  bottom: 0%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   ul {
     width: 100%;
     display: flex;

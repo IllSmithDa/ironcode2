@@ -43,6 +43,8 @@
 
 .landing {
   width: 100%;
+
+  position: relative;
   section {
     @include flexCenter;
     h1 {
@@ -67,6 +69,8 @@
   color: inherit;
   background-color: #FFF;
   width: 100%;
+  position: relative;
+
   &.dark {
     color: #FFF;
     background-color: #1A1A1A;
