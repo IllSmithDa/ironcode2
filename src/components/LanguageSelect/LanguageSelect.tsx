@@ -35,7 +35,7 @@ export default function LanguageSelect({
           ...data,
           language: data.language,
           checked: newChecked
-        }
+        } 
       }
       return data;
     });
