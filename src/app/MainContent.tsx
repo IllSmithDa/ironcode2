@@ -43,14 +43,13 @@ export default function MainContent({
               <></>
             }
             <section className={`main-top-body ${darkMode ? 'dark': ''}`}>
-              <section style={{ marginBottom: '300px'}}>
                 {children}
-              </section>
-              {
-              topicId || languageId ? 
-              <Footer />:
-              <></>
-              }
+                {
+                topicId || languageId ? 
+                <section style={{ marginTop: '200px' }}><Footer /></section>:
+                <></>
+                }
+      
             </section>
           </section>
         </main>
