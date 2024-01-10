@@ -24,3 +24,14 @@
     }
   }
 }
+
+@media (max-width: 400px) {
+  .language-items-container {
+    padding: 1rem;
+    ul {
+      li {
+        padding: 1rem;
+      }
+    }
+  }
+}
