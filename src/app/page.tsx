@@ -31,7 +31,7 @@ export default function Home() {
     <section className='homepage-container'>
       <TopicsTab languageId='' defaultMode={true} />
       <section className={`landing ${darkMode ? 'dark': ''}`}>
-        <section className={`code-container`}>
+        <section className="landing-content">
           <Image src={mainImg} alt='main title image' />
           <h1>IronCodeMan</h1>
           <h2>A Reference for Programmers</h2>

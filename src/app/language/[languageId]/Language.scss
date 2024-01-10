@@ -1,24 +1,26 @@
 @import '../../../sass/classes';
 
-.language-container {
+.language-items-container {
   padding: 2rem;
   box-sizing: border-box;
   width: 100%;
   background-color: #FFF;
   ul {
     li {
+      box-sizing: border-box;
       padding: 2rem;
       margin-top: 2rem;
       background-color: $color-air;
+      width: 100%;
     }
   }
   &.dark {
-    background-color: #444;
+    background-color: #161616;
     h4, p, pre {
       color: #FFF;
     }
     li {
-      background-color: #555;
+      background-color: #333;
     }
   }
 }

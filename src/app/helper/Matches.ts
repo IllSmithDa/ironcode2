@@ -362,4 +362,8 @@ export const listOfMatches = [
     keyword: 'shift',
     color: '#00BFFF',
   },
+  {
+    keyword: 'virtual',
+    color: '#00BFFF',
+  },
 ]

@@ -7,6 +7,13 @@
   font-weight: 400;
   font-style: normal;
 }
+
+@font-face {
+  font-family: 'Roboto Mono';
+  src: url('../../public/fonts/RobotoMono/RobotoMono-Regular.ttf');
+  font-weight: 400;
+  font-style: normal;
+}
 // main {
 //   max-width: 1100px;
 //   margin-right: auto;
@@ -51,12 +58,12 @@ html {
     background-color: #1A1A1A;
   }
 }
-pre, div, section, ul, li, h1, h2, h3, h4, p, a, font {
+div, section, ul, li, h1, h2, h3, h4, p, a {
   margin: 0;
   padding: 0;
   list-style: none;
   text-decoration: none;
-  font-family: "Roboto Normal";
+  font-family: "Roboto Mono";
   letter-spacing: 1px;
 }
 p {
@@ -64,18 +71,21 @@ p {
   letter-spacing: 1px;
   word-spacing: 1px;
 }
-pre {
-  line-height: 2.3rem;
-  letter-spacing: 1px;
-  word-spacing: 3px;
+pre, font {
+  line-height: 2.5rem;
+  letter-spacing: 0;
+  word-spacing: 0;
+  font-family: "Roboto Mono";
+  font-size: 1.4rem;
 }
+
 a::before,
 a::after,
 a:visited,
 a {
   color: #000;
 }
-p, label, pre  {
+p, label  {
   font-size: 1.5rem;
 }
 

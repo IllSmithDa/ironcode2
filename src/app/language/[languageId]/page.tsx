@@ -59,21 +59,21 @@ export default function Language() {
   }, [languageId, link, languageLink, dispatch]);
 
   const renderData = (concepts as ConceptItem[]).map((data) => (
-    <article className='card' key={data.id}>
+    <li className='card' key={data.id}>
       <h4>{data.concept_name}</h4>
       <pre id={`${data.id}_code`} className='code'>{data.text}</pre>
-    </article>
+      
+    </li>
   ))
 
   return (
-    <section className={`code-container code-page-colors ${darkMode ? 'dark': ''}`}>
+    <section className={`language-items-container ${darkMode ? 'dark': ''}`}>
       {/* <SlidingBackground /> */}
       <h4>Concepts for {languageData?.name}</h4>
       {
         isLoading ?
         <Loader />: 
         <ul
-        className='item-container'
         >
           {renderData}
         </ul>
