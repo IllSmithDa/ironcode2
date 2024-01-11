@@ -15,6 +15,8 @@ export const parseConcepts = (htmlString: string, elementId: string) => {
   newText = newText?.replace(/\<stdio\.h\>/g, `&#60;${`stdio.h`}&#62;`) as string;
   newText = newText?.replace(/\<iostream\>/g, `&#60;${`iostream`}&#62;`) as string;
   newText = newText?.replace(/\<vector\>/g, `&#60;${`vector`}&#62;`) as string;
+  newText = newText?.replace(/\<queue\>/g, `&#60;${`vector`}&#62;`) as string;
+  newText = newText?.replace(/\<stack\>/g, `&#60;${`vector`}&#62;`) as string;
   newText = newText?.replace(/\#include/g, `<font color="#00BFFF">${'#include'}</font>`) as string;
   newText = newText?.replace(/Intl/g, `<font color="#00BFFF">Intl</font>`) as string;
   newText = newText?.replace(/int/g, `<font color="#00BFFF">${`int`}</font>`) as string;
