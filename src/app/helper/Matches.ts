@@ -370,4 +370,12 @@ export const listOfMatches = [
     keyword: 'while',
     color: '#00BFFF',
   },
+  {
+    keyword: 'push',
+    color: '#00BFFF',
+  },
+  {
+    keyword: 'pop',
+    color: '#00BFFF',
+  },
 ]
