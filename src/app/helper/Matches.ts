@@ -366,4 +366,8 @@ export const listOfMatches = [
     keyword: 'virtual',
     color: '#00BFFF',
   },
+  {
+    keyword: 'while',
+    color: '#00BFFF',
+  },
 ]
