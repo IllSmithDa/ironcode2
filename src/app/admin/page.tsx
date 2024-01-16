@@ -52,7 +52,7 @@ export default function Admin() {
       return (
         <DeleteLanguages />
       );
-    }else {
+    } else {
       return (
         <section className='loader-container'>
           <Loader />
