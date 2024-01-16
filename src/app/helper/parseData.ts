@@ -22,6 +22,7 @@ export const parseConcepts = (htmlString: string, elementId: string) => {
   newText = newText?.replace(/\<string\>/g, `&#60;${`string`}&#62;`) as string;
   newText = newText?.replace(/\<set\>/g, `&#60;${`set`}&#62;`) as string;
   newText = newText?.replace(/\<regex\>/g, `&#60;${`regex`}&#62;`) as string;
+  newText = newText?.replace(/\<ctime\>/g, `&#60;${`ctime`}&#62;`) as string;
   newText = newText?.replace(/\<bits\/stdc++.h\>/g, `&#60;${`bits/stdc++.h`}&#62;`) as string;
   newText = newText?.replace(/\#include/g, `<font color="#00BFFF">${'#include'}</font>`) as string;
   newText = newText?.replace(/Intl/g, `<font color="#00BFFF">Intl</font>`) as string;
