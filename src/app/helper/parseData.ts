@@ -17,6 +17,7 @@ export const parseConcepts = (htmlString: string, elementId: string) => {
   newText = newText?.replace(/\<vector\>/g, `&#60;${`vector`}&#62;`) as string;
   newText = newText?.replace(/\<queue\>/g, `&#60;${`queue`}&#62;`) as string;
   newText = newText?.replace(/\<stack\>/g, `&#60;${`stack`}&#62;`) as string;
+  newText = newText?.replace(/\<format\>/g, `&#60;${`format`}&#62;`) as string;
   newText = newText?.replace(/\<map\>/g, `&#60;${`map`}&#62;`) as string;
   newText = newText?.replace(/\<string\>/g, `&#60;${`string`}&#62;`) as string;
   newText = newText?.replace(/\<set\>/g, `&#60;${`set`}&#62;`) as string;
