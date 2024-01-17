@@ -1,7 +1,7 @@
 // Online C++ compiler to run C++ program online
 #include <iostream>
 #include <vector>
-#include <bits/stdc++.h>
+#include <queue>
 
 using namespace std;
 
@@ -18,18 +18,22 @@ const sum = getSum(testArr);
 console.log(sum);
 */
 
+int getSum (queue<int> arr) {
+  if (arr.size() == 0) {
+    return 0;
+  }
+  int firstVal = arr.front();
+  arr.pop();
+  return firstVal + getSum(arr);
+}
+
 int main() {
-  vector<int> ages = {5, 3, 1, 6, 7, 4, 19};
-
-  sort (ages.begin(), ages.end());
-  for (int i = 0; i < ages.size(); i++) {
-    cout << ages[i] << endl;
-  }
-
-  sort(ages.begin(), ages.end(), greater<int>());
-  for (int i = 0; i < ages.size(); i++) {
-    cout << ages[i] << endl;
-  }
-  
+  queue<int> testArr;
+  testArr.push(1);
+  testArr.push(2);
+  testArr.push(3);
+  testArr.push(5);
+  int sum = getSum(testArr);
+  cout << sum << endl;
   return 0;
 }
