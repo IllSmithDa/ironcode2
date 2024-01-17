@@ -28,6 +28,7 @@ export const parseConcepts = (htmlString: string, elementId: string) => {
   newText = newText?.replace(/Intl/g, `<font color="#00BFFF">Intl</font>`) as string;
   newText = newText?.replace(/int/g, `<font color="#00BFFF">${`int`}</font>`) as string;
   newText = newText?.replace(/Int/g, `<font color="#00BFFF">${`Int`}</font>`) as string;
+  newText = newText?.replace(/Integer/g, `<font color="#00BFFF">${`Integer`}</font>`) as string;
   newText = newText?.replace(/println!/g, `<font color="#00BFFF">${`println!`}</font>`) as string;
   // comment matching
   let doubleQuotes = newText?.match(/["'][a-zA-Z0-9\s!\{\}\%]*["']/g)
