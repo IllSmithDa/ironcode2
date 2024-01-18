@@ -31,12 +31,24 @@ export const parseConcepts = (htmlString: string, elementId: string) => {
   newText = newText?.replace(/int/g, `<font color="#00BFFF">${`int`}</font>`) as string;
   newText = newText?.replace(/Int/g, `<font color="#00BFFF">${`Int`}</font>`) as string;
   newText = newText?.replace(/println!/g, `<font color="#00BFFF">${`println!`}</font>`) as string;
+  newText = newText?.replace(/\/\*\nmulti \nline \ncomment\n\*\//g, `<font color="#22AA22">${`\/\*\nmulti \nline \ncomment\n\*\/`}</font>`) as string;
+  newText = newText?.replace(/\"\"\"\nmulti \nline \ncomment\n\"\"\"/g, `<font color="#22AA22">${`\"\"\"\nmulti \nline \ncomment\n\"\"\"`}</font>`) as string;
   // comment matching
-  let doubleQuotes = newText?.match(/["'][a-zA-Z0-9\s!\{\}\%]*["']/g)
+  let doubleQuotes = newText?.match(/["'][a-zA-Z0-9\s!\{\}\%]*["?'?]/g)
   doubleQuotes?.forEach((stringVal) => {
     var regexp = new RegExp(stringVal, "gi");
     newText = newText?.replace(regexp, `<font color="#E42217">${stringVal}</font>`)
   })
+
+  let comments = newText?.match(/(\/\/[a-zA-Z0-9\s]+\n)|(\#[a-zA-Z0-9\s]+\n)|(\"\"\"[a-zA-Z0-9\n\s]+\"\"\")/g)
+  console.log(comments);
+  comments?.forEach((stringVal) => {
+    // console.log(stringVal);
+    var regexp = new RegExp(stringVal, "g");
+    newText = newText?.replace(regexp, `<font color="#22AA22">${stringVal}</font>`);
+    // console.log(newText);
+  })
+  
   // newText = newText?.replace(/\/\/ indent to indicate block of code/g, `<font color="#11BB22">// indent to indicate block of code</font>`) as string;
   // newText = newText?.replace(/\/\/ command line/g, `<font color="#11BB22">// command line</font>`) as string;
   newText = newText?.replace(/\(/g, `<font color="#A52A2A">(</font>`) as string;
