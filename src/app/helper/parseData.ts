@@ -41,7 +41,7 @@ export const parseConcepts = (htmlString: string, elementId: string) => {
   })
 
   let comments = newText?.match(/(\/\/[a-zA-Z0-9\s]+\n)|(\#[a-zA-Z0-9\s]+\n)|(\"\"\"[a-zA-Z0-9\n\s]+\"\"\")/g)
-  console.log(comments);
+  // console.log(comments);
   comments?.forEach((stringVal) => {
     // console.log(stringVal);
     var regexp = new RegExp(stringVal, "g");
