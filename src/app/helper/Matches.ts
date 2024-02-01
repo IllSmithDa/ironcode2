@@ -374,4 +374,8 @@ export const listOfMatches = [
     keyword: 'pop',
     color: '#00BFFF',
   },
+  {
+    keyword: 'Number',
+    color: '#00BFFF',
+  },
 ]
