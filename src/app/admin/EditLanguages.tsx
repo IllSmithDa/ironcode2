@@ -23,6 +23,12 @@ export default function DeleteLanguages() {
   const updateUrl = 'api/language/update';
 
   useEffect(() => {
+    if (modalOpen === false && editModalOpen === false) {
+      setSelected(undefined);
+    }
+  }, [modalOpen, editModalOpen])
+
+  useEffect(() => {
     // https://blog.logrocket.com/3-ways-implement-infinite-scroll-react/
     const fetchData = async () => {
       setIsLoading(true);
@@ -62,8 +68,20 @@ export default function DeleteLanguages() {
         ...selected,
         description
       }
+      
       await axiosFetch.put(updateUrl, updatedConcept);
       setEditModalOpen(false);
+      setLanguages((languages) =>  {
+        return languages.map((language) => {
+          if(language?.id === selected?.id) {
+            return {
+              ...language,
+              description
+            }
+          } 
+          return language
+        })
+      })
 
     } catch{
       setErr("Error: Could not update Topic")
@@ -77,7 +95,8 @@ export default function DeleteLanguages() {
       }}/>
       <FontAwesomeIcon icon={faWrench} onClick={() =>  {
         setEditModalOpen(true);
-        setSelected(entry)
+        setDescription(entry.description);
+        setSelected(entry); 
       }}/>
       <h4>{entry.name}</h4>
       <p>{entry.description}</p>
@@ -117,7 +136,7 @@ export default function DeleteLanguages() {
             <textarea
               value={description}
               onChange={(e) => setDescription(e.target.value)}
-              placeholder={`Edit Description of ${selected?.description}`}
+              placeholder={`Edit Description of ${selected?.name}`}
             />   
           </section>
           {
