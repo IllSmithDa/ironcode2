@@ -7,7 +7,7 @@ import NewForm from './NewForm';
 import useLanguages from '@/hooks/LanguageHook';
 import EditTopics from '@/app/admin/EditTopics';
 import ConceptList from './ConceptList';
-import DeleteLanguages from './DeleteLanguages';
+import DeleteLanguages from './EditLanguages';
 import { useTheme } from '@/themes/ThemeContext';
 
 export default function Admin() {

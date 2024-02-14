@@ -6,6 +6,7 @@ import React, { useEffect, useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTrashCan } from '@fortawesome/free-solid-svg-icons/faTrashCan';
 import { faClose } from '@fortawesome/free-solid-svg-icons';
+import { faWrench } from '@fortawesome/free-solid-svg-icons/faWrench';
 import './Admin.scss';
 import Modal from '../../components/Modal/Modal';
 
@@ -13,9 +14,13 @@ export default function DeleteLanguages() {
   const [err, setErr] = useState<string>('');
   const [selected, setSelected] = useState<Language>();
   const [modalOpen, setModalOpen] = useState(false);
+  const [editModalOpen, setEditModalOpen] = useState(false);
   const [languages, setLanguages] = useState<Language []>([]);
   const [isLoading, setIsLoading] = useState(false);
+  const [description, setDescription] = useState<string>('');
+
   const url = `/api/language/all-languages`;
+  const updateUrl = 'api/language/update';
 
   useEffect(() => {
     // https://blog.logrocket.com/3-ways-implement-infinite-scroll-react/
@@ -50,10 +55,28 @@ export default function DeleteLanguages() {
       setErr('Error: Could not delete topic')
     }
   }
+
+  const submitEdits = async () => {
+    try {
+      const updatedConcept = {
+        ...selected,
+        description
+      }
+      await axiosFetch.put(updateUrl, updatedConcept);
+      setEditModalOpen(false);
+
+    } catch{
+      setErr("Error: Could not update Topic")
+    }
+  }
   const renderLanguages = (languages as Language []).map((entry) => (
     <section className='card-item' key={entry.id}>
       <FontAwesomeIcon icon={faTrashCan} onClick={() =>  {
         setModalOpen(true);
+        setSelected(entry)
+      }}/>
+      <FontAwesomeIcon icon={faWrench} onClick={() =>  {
+        setEditModalOpen(true);
         setSelected(entry)
       }}/>
       <h4>{entry.name}</h4>
@@ -80,6 +103,33 @@ export default function DeleteLanguages() {
               No
             </button>
             <button onClick={() => deleteTopic()} className='std-button std-button-short'>
+              Yes
+            </button>
+          </section>
+        </section>
+      </Modal>
+      <Modal isOpen={editModalOpen}>
+        <section className='topic-delete-modal'>
+          <FontAwesomeIcon icon={faClose} onClick={() => setEditModalOpen(false)} />
+          <h4>Edit: {selected?.name}</h4>
+          <section className='form-group'>
+            <label>Concept Text</label>
+            <textarea
+              value={description}
+              onChange={(e) => setDescription(e.target.value)}
+              placeholder={`Edit Description of ${selected?.description}`}
+            />   
+          </section>
+          {
+            err ? 
+            <p className='error-txt'>{err}</p>:
+            <></>
+          }
+          <section className='btn-group'>
+            <button onClick={() => setEditModalOpen(false)} className='std-button std-button-short'>
+              No
+            </button>
+            <button onClick={() => submitEdits()} className='std-button std-button-short'>
               Yes
             </button>
           </section>

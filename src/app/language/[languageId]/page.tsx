@@ -58,24 +58,48 @@ export default function Language() {
     }
   }, [languageId, link, languageLink, dispatch]);
 
-  const renderData = (concepts as ConceptItem[]).map((data) => (
-    <li className='card' key={data.id}>
-      <h4>{data.concept_name}</h4>
-      <pre id={`${data.id}_code`} className='code'>{data.text}</pre>
-      
-    </li>
-  ))
-
+  // const renderData = (concepts as ConceptItem[]).map((data) => (
+  //   <li className='card' key={data.id}>
+  //     <h4>{data.concept_name}</h4>
+  //     <pre id={`${data.id}_code`} className='code'>{data.text}</pre>
+  //   </li>
+  // ))
+  const renderData = (category: string) => {
+    return (
+      <>
+        {
+          (concepts as ConceptItem[])?.filter(topic => topic.category === category).map((data) => (
+            <li className='card' key={data.id}>
+            <h4>{data.concept_name}</h4>
+            <pre id={`${data.id}_code`} className='code'>{data.text}</pre>
+          </li>
+          ))
+        }
+      </>
+    )
+  }
   return (
     <section className={`language-items-container ${darkMode ? 'dark': ''}`}>
       {/* <SlidingBackground /> */}
-      <h4>Concepts for {languageData?.name}</h4>
+      <h2>Concepts for {languageData?.name}</h2>
+      <p style={{ margin: "2rem 0"}}>
+        {languageData?.description}
+      </p>
       {
         isLoading ?
         <Loader />: 
         <ul
         >
-          {renderData}
+          <h3>Basics</h3>
+          {renderData('basic')}
+          <h3>Data Structure</h3>
+          {renderData('data')}
+          <h3>Iterables</h3>
+          {renderData('iterables')}
+          <h3>Classes</h3>
+          {renderData('class')}
+          <h3>Regex</h3>
+          {renderData('regex')}
         </ul>
       }
     </section>

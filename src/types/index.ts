@@ -16,6 +16,8 @@ export interface ConceptItem {
   text: string,
   language: string,
   created_at: string,
+  category?: string,
+  rank ?: string,
 }
 export interface ActiveConceptItem extends ConceptItem {
   checked: boolean
