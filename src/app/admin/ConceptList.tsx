@@ -24,17 +24,18 @@ export default function ConceptList() {
   const [editModalOpen, setEditModalOpen] = useState(false);
   const [delModalOpen, setDelModalOpen] = useState(false);
   const [languages] = useLanguages();
-  const url = '/api/concept/by-language'
+  const url = '/api/concept/concept-only'
+  
   useEffect(() => {
     const fetch = async () => {
       try {
         setIsLoading(true)
         const firstLanguage = (languages as Language[])[0];
         setSelectedLanguage(firstLanguage)
-        const data = {
-          language: firstLanguage.name
-        }
-        const res = await axiosFetch.post(`${url}`, data)
+        // const data = {
+        //   language: firstLanguage.name
+        // }
+        const res = await axiosFetch.get(`${url}/${firstLanguage.name}`)
         if (res.status === 200) {
           console.log(res.data);
           setConceptData([...res.data.data])
