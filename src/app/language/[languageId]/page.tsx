@@ -81,7 +81,7 @@ export default function Language() {
   return (
     <section className={`language-items-container ${darkMode ? 'dark': ''}`}>
       {/* <SlidingBackground /> */}
-      <h2>Concepts for {languageData?.name}</h2>
+      <h3>Concepts for {languageData?.name}</h3>
       <p style={{ margin: "2rem 0"}}>
         {languageData?.description}
       </p>
