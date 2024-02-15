@@ -224,6 +224,10 @@
   animation-name: fadeInLeft;
 }
 
+.loader-container {
+  height: 100vh;
+}
+
 @keyframes fadeInLeft {
   from {
     margin-left: 1rem;

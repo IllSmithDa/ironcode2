@@ -87,7 +87,10 @@ export default function Language() {
       </p>
       {
         isLoading ?
-        <Loader />: 
+
+        <section className={`loader-container  ${darkMode ? 'dark': ''}`}>
+          <Loader />
+        </section>:
         <ul
         >
           <h3>Basics</h3>
