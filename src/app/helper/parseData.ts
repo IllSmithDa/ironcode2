@@ -25,7 +25,7 @@ export const parseConcepts = (htmlString: string, elementId: string) => {
   newText = newText?.replace(/\=begin\nmulti \nline \ncomment\n\=end/g, `<font color="#22AA22">${`\=begin\nmulti \nline \ncomment\n\=end`}</font>`) as string;
   newText = newText?.replace(/\%\{\nmulti \nline \ncomment\n\%\}/g, `<font color="#22AA22">${`\%\{\nmulti \nline \ncomment\n\%\}`}</font>`) as string;
   // comment matching
-  let doubleQuotes = newText?.match(/["'][a-zA-Z0-9\\\n-\s\/!_\:\,\{\}\%!"]*["?'?]/g)
+  let doubleQuotes = newText?.match(/["'][a-zA-Z0-9\\\n-\s\/!_\:\,\{\}\%!"!?]*["?'?]/g)
   doubleQuotes?.forEach((stringVal) => {
     var regexp = new RegExp(stringVal, "gi");
     newText = newText?.replace(regexp, `<font color="#E42217">${stringVal}</font>`)
