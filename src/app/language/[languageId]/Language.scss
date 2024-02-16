@@ -118,7 +118,9 @@
     top: 60px;
   }
   .dropdown-cont,
-  .lang-navbar-dropdown {
+  .lang-navbar-dropdown,
+  .category-select-dropdown,
+  .category-select-dropdown button {
     &.dark {
       width: 100%;
     }
