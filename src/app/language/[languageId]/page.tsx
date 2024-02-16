@@ -115,7 +115,7 @@ export default function Language() {
           {renderData('regex')}
         */}
         <section className='dropdown-cont'>
-          <section className={`navbar-dropdown list-right ${darkMode ? 'dark': ''}`}>
+          <section className={`lang-navbar-dropdown list-right ${darkMode ? 'dark': ''}`}>
             <button type='button' onClick={() => SetCategoryDrop(!categoryDrop)} className='menu-tabs'>
               {title} {categoryDrop ? <>▲</> : <>▼</>}
             </button>
@@ -161,6 +161,17 @@ export default function Language() {
             {renderData()}
           </section>
         </ul>
+      }
+      {
+        categoryDrop ? 
+        <div
+          className='silent-modal'
+          onClick={() => {
+            SetCategoryDrop(false); 
+          }}
+        >
+        </div>:
+        <></>
       }
     </section>
   )
