@@ -115,11 +115,9 @@ export default function Language() {
           {renderData('regex')}
         */}
         <section className='dropdown-cont'>
-          <section className={`lang-navbar-dropdown list-right ${darkMode ? 'dark': ''}`}>
-            <button type='button' onClick={() => SetCategoryDrop(!categoryDrop)} className='menu-tabs'>
+            <button type='button' onClick={() => SetCategoryDrop(!categoryDrop)} className={`lang-navbar-dropdown list-right menu-tabs ${darkMode ? 'dark': ''}`}>
               {title} {categoryDrop ? <>▲</> : <>▼</>}
-            </button>
-          </section>
+          </button>
           {
             categoryDrop ?
             <section className={`category-select-dropdown ${darkMode ? 'dark': ''}`}>
