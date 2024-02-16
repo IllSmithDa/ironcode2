@@ -110,12 +110,26 @@
   }
 
 }
-@media (max-width: 400px) {
+
+@media (max-width: 600px) {
   .language-items-container {
     padding: 1rem;
     ul {
       li {
         padding: 1rem;
+      }
+    }
+  }
+  .lang-navbar-dropdown,
+  .category-select-dropdown {
+    button {
+      width: 96vw;
+      height: 60px;
+    }
+    &.dark {
+      button {
+        width: 96vw;
+        height: 60px;
       }
     }
   }
