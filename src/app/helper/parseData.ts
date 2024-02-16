@@ -15,10 +15,7 @@ export const parseConcepts = (htmlString: string, elementId: string) => {
   newText = newText?.replace(/\#include/g, `<font color="#00BFFF">${'#include'}</font>`) as string;
   newText = newText?.replace(/Integer/g, `<font color="#00BFFF">${`Integer`}</font>`) as string;
   newText = newText?.replace(/Intl/g, `<font color="#00BFFF">Intl</font>`) as string;
-  newText = newText?.replace(/![a-zA-Z0-9]int\s/g, `<font color="#00BFFF">${`int `}</font>`) as string;
   newText = newText?.replace(/Int\s/g, `<font color="#00BFFF">${`Int `}</font>`) as string;
-  newText = newText?.replace(/\sint/g, `<font color="#00BFFF">${` int`}</font>`) as string;
-  newText = newText?.replace(/\sInt/g, `<font color="#00BFFF">${` Int`}</font>`) as string;
   newText = newText?.replace(/println!/g, `<font color="#00BFFF">${`println!`}</font>`) as string;
   newText = newText?.replace(/\/\*\nmulti \nline \ncomment\n\*\//g, `<font color="#22AA22">${`\/\*\nmulti \nline \ncomment\n\*\/`}</font>`) as string;
   newText = newText?.replace(/\"\"\"\nmulti \nline \ncomment\n\"\"\"/g, `<font color="#22AA22">${`\"\"\"\nmulti \nline \ncomment\n\"\"\"`}</font>`) as string;
