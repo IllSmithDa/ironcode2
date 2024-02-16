@@ -113,13 +113,15 @@
 
 @media (max-width: 600px) {
   .language-items-container {
-    top: 60px;
     padding: 1rem;
     ul {
       li {
         padding: 1rem;
       }
     }
+  }
+  .category-select-dropdown {
+    top: 60px;
   }
   .lang-navbar-dropdown,
   .category-select-dropdown {
