@@ -20,7 +20,10 @@ export default function LanguageSelect({
     if (isDark !== null) {
       setDarkMode(isDark);
     }
-  }, [isDark])
+    if(concepts.length) {
+      console.log(concepts);
+    }
+  }, [isDark, concepts])
 
   const handleLanguage = (language: string, newChecked: boolean) => {
     

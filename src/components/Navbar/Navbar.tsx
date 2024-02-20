@@ -143,8 +143,7 @@ export default function Navbar({
             <button onClick={() =>  setMobileNav(!mobileNav)} className={`navbar-icons ${darkMode ? 'dark': ''}`}>
               <FontAwesomeIcon
                 icon={faBars}
-                tabIndex={0}
-                aria-label='nav-icon'
+                tabIndex={-1}
               />
             </button>
           </li>
@@ -166,8 +165,7 @@ export default function Navbar({
               >
                 <FontAwesomeIcon
                   icon={faMoon}
-                  tabIndex={0}
-                  aria-label='dark mode button'
+                  tabIndex={-1}
                   style={{ color: '#00AAFF'}}
                 />
               </button>:
@@ -177,8 +175,7 @@ export default function Navbar({
               >
                 <FontAwesomeIcon
                   icon={faSun}
-                  tabIndex={0}
-                  aria-label='light mode icon'
+                  tabIndex={-1}
                   style={{ color: '#EAC117'}}
                 />
               </button>
@@ -205,7 +202,7 @@ export default function Navbar({
                 <button onClick={() =>  push('/')}>
                   <FontAwesomeIcon
                     icon={faHome}
-                    aria-label='nav-icon'
+                    tabIndex={-1}
                   />
                 </button>
                 <Link className='home-nav-btn' onClick={() => setMobileNav(false)} href='/'><h3>Home</h3></Link>
@@ -216,7 +213,7 @@ export default function Navbar({
               }}>
                 <FontAwesomeIcon
                   icon={faClose}
-                  aria-label='nav-icon'
+                  tabIndex={-1}
                 />
               </button>
             </article>
@@ -250,7 +247,7 @@ export default function Navbar({
               }}>
                 <FontAwesomeIcon
                   icon={faClose}
-                  aria-label='nav-icon'
+                  tabIndex={-1}
                 />
               </button>
             <h4>Select Language</h4>
