@@ -1,8 +1,6 @@
 'use client';
 import React, {useEffect, useState} from 'react'
 import './Home.scss'
-import { ActiveLanguages, ConceptItem, ConceptTopic, Language } from '@/types';
-import { axiosFetch } from '@/axios';
 import TopicsTab from '@/components/TopicsTab/TopicsTab';
 import { useDispatch } from 'react-redux';
 import { setTopicSelection } from '@/Redux/Features/TopicsSlice';

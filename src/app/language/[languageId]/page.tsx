@@ -4,13 +4,12 @@ import Loader from '@/components/Loader/Loader';
 import { ConceptItem, Language } from '@/types';
 import { useParams } from 'next/navigation';
 import React, { useEffect, useState } from 'react';
-import './Language.scss';
 import { useDispatch } from 'react-redux';
 import { setLanguage } from '@/Redux/Features/LanguageSlice';
-import SlidingBackground from '@/components/SlidingBackground/SlidingBackground';
 import { useTheme } from '@/themes/ThemeContext';
 import { parseConcepts } from '@/app/helper/parseData';
-import { faL } from '@fortawesome/free-solid-svg-icons';
+import './Language.scss';
+
 export default function Language() {
   const [isLoading, setIsLoading] = useState(true);
   const [category, SetCategory] = useState("basic");
@@ -62,12 +61,7 @@ export default function Language() {
     }
   }, [languageId, link, languageLink, dispatch]);
 
-  // const renderData = (concepts as ConceptItem[]).map((data) => (
-  //   <li className='card' key={data.id}>
-  //     <h4>{data.concept_name}</h4>
-  //     <pre id={`${data.id}_code`} className='code'>{data.text}</pre>
-  //   </li>
-  // ))
+
   const renderData = () => {
     return (
       <>
@@ -100,20 +94,7 @@ export default function Language() {
         <section className={`loader-container  ${darkMode ? 'dark': ''}`}>
           <Loader />
         </section>:
-        <ul
-        >{
-          /*
-          <h3>Basics</h3>
-          {renderData('basic')}
-          <h3>Data Structure</h3>
-          {renderData('data')}
-          <h3>Iterables</h3>
-          {renderData('iterables')}
-          <h3>Classes</h3>
-          {renderData('class')}
-          <h3>Regex</h3>
-          {renderData('regex')}
-        */}
+        <ul>
         <section className='dropdown-cont'>
             <button type='button' onClick={() => SetCategoryDrop(!categoryDrop)} className={`lang-navbar-dropdown list-right menu-tabs ${darkMode ? 'dark': ''}`}>
               {title} {categoryDrop ? <>▲</> : <>▼</>}
@@ -174,3 +155,66 @@ export default function Language() {
     </section>
   )
 }
+
+/*
+import { axiosFetch } from '@/axios';
+import { ConceptItem, Language } from '@/types';
+import { parseConcepts } from '@/app/helper/parseData';
+
+export default function Language({ languageData, concepts }) {
+  const renderData = () => {
+    return (
+      <>
+        {concepts.map((data) => (
+          <li className='card' key={data.id}>
+            <h4>{data.concept_name}</h4>
+            <pre id={`${data.id}_code`} className='code'>
+              {data.text}
+            </pre>
+          </li>
+        ))}
+      </>
+    );
+  };
+
+  // Your other functions and JSX code remain unchanged
+}
+
+export async function getServerSideProps(context) {
+  const { languageId } = context.params;
+
+  try {
+    const languageLink = `/api/language/by-id/${languageId}`;
+    const languageRes: Language = (await axiosFetch.get(languageLink)).data.data;
+
+    const link = `/api/concept/by-language`;
+    const res = await axiosFetch.post(link, { language: languageRes.name });
+    if (res.status === 200) {
+      const data: ConceptItem[] = res.data.data;
+
+      // Parse concepts
+      for (let i = 0; i < data.length; i++) {
+        parseConcepts(data[i].text, `${data[i].id}_code`);
+      }
+
+      return {
+        props: {
+          languageData: languageRes,
+          concepts: data,
+        },
+      };
+    }
+  } catch (err) {
+    // Handle error
+    console.error(err);
+  }
+
+  // Return empty props if data fetching fails
+  return {
+    props: {
+      languageData: null,
+      concepts: [],
+    },
+  };
+}
+*/

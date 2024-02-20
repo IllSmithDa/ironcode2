@@ -17,7 +17,7 @@ export async function generateMetadata(
   const topicObj = (await axiosFetch.get(link)).data.data;
  
   // optionally access and extend (rather than replace) parent metadata
-  const previousImages = (await parent).openGraph?.images || []
+  // const previousImages = (await parent).openGraph?.images || []
  
   return {
     title: `${topicObj.name} | IronCodeMan`,
