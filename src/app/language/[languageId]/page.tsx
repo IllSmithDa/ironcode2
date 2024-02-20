@@ -67,10 +67,13 @@ export default function Language() {
       <>
         {
           (concepts as ConceptItem[])?.filter(topic => topic.category === category).map((data) => (
-            <li className='card' key={data.id}>
-            <h4>{data.concept_name}</h4>
-            <pre id={`${data.id}_code`} className='code'>{data.text}</pre>
-          </li>
+            <li
+              className='card'
+              key={data.id}
+            >
+              <h4>{data.concept_name}</h4>
+              <pre id={`${data.id}_code`} className='code'>{data.text}</pre>
+            </li>
           ))
         }
       </>
