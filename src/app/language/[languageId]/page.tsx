@@ -106,7 +106,7 @@ export default function Language() {
             categoryDrop ?
             <section className={`category-select-dropdown ${darkMode ? 'dark': ''}`}>
               <button
-                onClick={() => handleTabChange('basic', 'Basic') }
+                onClick={() => handleTabChange('basic', 'Basics') }
                 className='active-tab menu-tabs'
               >
                 Basics
