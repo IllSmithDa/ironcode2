@@ -13,7 +13,7 @@ import './Language.scss';
 export default function Language() {
   const [isLoading, setIsLoading] = useState(true);
   const [category, SetCategory] = useState("basic");
-  const [title, setTitle] = useState("Basic");
+  const [title, setTitle] = useState("Basics");
   const [categoryDrop, SetCategoryDrop] = useState(false);
   const [concepts, setConcepts] = useState<ConceptItem []>([]);
   const [darkMode, setDarkMode] = useState<boolean>();
