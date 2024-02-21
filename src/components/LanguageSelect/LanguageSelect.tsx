@@ -20,7 +20,10 @@ export default function LanguageSelect({
     if (isDark !== null) {
       setDarkMode(isDark);
     }
-  }, [isDark])
+    if(concepts.length) {
+      console.log(concepts);
+    }
+  }, [isDark, concepts])
 
   const handleLanguage = (language: string, newChecked: boolean) => {
     
@@ -45,14 +48,24 @@ export default function LanguageSelect({
 
   const renderData = concepts.map((data) => (
     <li key={data.language}>
-      <input id={`selection-${data.language}`} type='checkbox' checked={data.checked} onChange={() => {
-        handleLanguage(data.language, !data.checked)
-      }} />
+      <input
+        id={`selection-${data.language}`}
+        type='checkbox' checked={data.checked}
+        onKeyUp={(e) => {
+          if (e.key === 'Enter') {
+            handleLanguage(data.language, !data.checked); 
+          }
+        }}
+        onChange={() => {
+          handleLanguage(data.language, !data.checked)
+        }}
+      />
       <button
         className='inv-btn'
         onClick={() => {
           handleLanguage(data.language, !data.checked)
         }}
+        tabIndex={-1}
         >
           {data.language}
         </button>
