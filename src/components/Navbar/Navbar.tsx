@@ -156,6 +156,8 @@ export default function Navbar({
           </li>
         </ul>
         <ul>
+          {
+            /*
           <li className='app-icons'>
             {
               isDark ?
@@ -181,6 +183,7 @@ export default function Navbar({
               </button>
             }
           </li>
+          */}
           <li className={`navbar-dropdown list-right ${darkMode ? 'dark': ''}`}>
             <button type='button' onClick={() => setLanguageDropdown(!languageDropdown)} className='menu-tabs'>
               {languageId ? languageOption : `Select`} {languageDropdown ? <>▲</> : <>▼</>}

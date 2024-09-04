@@ -27,8 +27,11 @@ export const ThemeProvider = ({ children }: {
   }
 
   useEffect(() => {
+    /*
     const findDarkVal = localStorage.getItem("ironCodeDarkness");
     const isDarkness:boolean = findDarkVal === null ? false: (findDarkVal === 'true');
+    */
+   const isDarkness = true;
     setIsDark(isDarkness)
     if (isDarkness) {
       toggleElements();
